@@ -1,0 +1,19 @@
+.form-group{
+    margin: 1rem auto;
+}
+
+.form-control{
+    outline: none;
+    border-radius: 4px;
+    border: 2px solid $gray-200;
+    height: 3rem;
+    &::placeholder{
+        color: $gray-500;
+        font-size: 0.9rem;
+    }
+
+    &:focus{
+        box-shadow: none;
+        border: 2px solid $black;
+    }
+}

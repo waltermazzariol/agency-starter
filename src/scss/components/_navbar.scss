@@ -1,0 +1,29 @@
+// Base styling for the navbar
+#mainNav {
+    background-color: $navbar-color;
+    box-shadow: $text-shadow;
+    min-height: $navbar-height;
+    .navbar {
+        &-brand {
+            font-family: $navbar-font-family;
+            color: $navbar-text-color;
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-right: calc(55% - 60px);
+            img {
+                max-width: 145px;
+                max-height: 30px;
+            }
+        }
+        &-toggler {
+            border-color: transparent;
+            &-icon {
+                // background-image: url("../../../assets/img/menu.svg");
+                max-width: 85%;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
