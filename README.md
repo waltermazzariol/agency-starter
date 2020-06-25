@@ -46,4 +46,4 @@
 
 #### Reference
 
-This project was created based on [underscore](https://underscores.me/) and (Gulp for WordPress: Initial Setup)[https://css-tricks.com/gulp-for-wordpress-initial-setup/]
+This project was created based on [underscore](https://underscores.me/) and [Gulp for WordPress: Initial Setup](https://css-tricks.com/gulp-for-wordpress-initial-setup/)
