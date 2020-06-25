@@ -16,31 +16,35 @@
 
     Use the CLI to clone this project.
     
-    ``` git clone https://github.com/waltermazzariol/starter-wansite
+    ``` 
+    git clone https://github.com/waltermazzariol/starter-wansite
     ```
 
 2.  **Start your project.**
 
     Go into site’s directory and install the dependecies!.
 
-    ```npm install
+    ```
+    npm install
     ```
 
 3.  **Start dev environment**
 
     Excecute 
 
-    ```gulp dev
+    ```
+    gulp dev
     ```
 
 4.  **Build production zip**
 
     Excecute 
 
-    ```gulp build
+    ```
+    gulp build
     ```
 
 #### Reference
 
-This project waas created based on [underscore](https://underscores.me/) and (Gulp for WordPress: Initial Setup
+This project was created based on [underscore](https://underscores.me/) and (Gulp for WordPress: Initial Setup
 )[https://css-tricks.com/gulp-for-wordpress-initial-setup/]
