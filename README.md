@@ -22,13 +22,13 @@
 
 2.  **Start your project.**
 
-    Go into site’s directory and install the dependecies!.
+    Go into site’s directory and install the dependecies.
 
     ```
     npm install
     ```
 
-3.  **Start dev environment**
+3.  **Start deveploment environment**
 
     Excecute 
 
@@ -46,5 +46,4 @@
 
 #### Reference
 
-This project was created based on [underscore](https://underscores.me/) and (Gulp for WordPress: Initial Setup
-)[https://css-tricks.com/gulp-for-wordpress-initial-setup/]
+This project was created based on [underscore](https://underscores.me/) and (Gulp for WordPress: Initial Setup)[https://css-tricks.com/gulp-for-wordpress-initial-setup/]
