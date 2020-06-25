@@ -43,7 +43,7 @@ export const styles = () => {
 }
 
 export const watchForChanges = () => {
-  watch('src/scss/**/*.scss', styles);
+  watch('src/scss/**/*.scss', series(styles, reload));
   watch('src/images/**/*.{jpg,jpeg,png,svg,gif}', series(images, reload));
   watch(['src/**/*','!src/{images,js,scss}','!src/{images,js,scss}/**/*'], series(copy, reload));
   watch('src/js/**/*.js', series(scripts, reload));
