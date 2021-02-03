@@ -1,7 +1,7 @@
 // Base styling for the navbar
 #mainNav {
     background-color: $navbar-color;
-    box-shadow: $text-shadow;
+    @include BoxShadow(2);
     min-height: $navbar-height;
     .navbar {
         &-brand {

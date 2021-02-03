@@ -1,11 +1,11 @@
 <?php
 
 /**
- * wordpress_gulp_starter functions and definitions
+ * wp_guarapo functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package wordpress_gulp_starter
+ * @package wp_guarapo
  */
 
 if (!defined('_S_VERSION')) {
@@ -13,7 +13,7 @@ if (!defined('_S_VERSION')) {
 	define('_S_VERSION', '1.0.0');
 }
 
-if (!function_exists('wordpress_gulp_starter_setup')) :
+if (!function_exists('wp_guarapo_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -21,15 +21,15 @@ if (!function_exists('wordpress_gulp_starter_setup')) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function wordpress_gulp_starter_setup()
+	function wp_guarapo_setup()
 	{
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on wordpress_gulp_starter, use a find and replace
-		 * to change 'wordpress_gulp_starter' to the name of your theme in all the template files.
+		 * If you're building a theme based on wp_guarapo, use a find and replace
+		 * to change 'wp_guarapo' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain('wordpress_gulp_starter', get_template_directory() . '/languages');
+		load_theme_textdomain('wp_guarapo', get_template_directory() . '/languages');
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support('automatic-feed-links');
@@ -52,7 +52,7 @@ if (!function_exists('wordpress_gulp_starter_setup')) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__('Primary', 'wordpress_gulp_starter'),
+				'menu-1' => esc_html__('Primary', 'wp_guarapo'),
 			)
 		);
 
@@ -77,7 +77,7 @@ if (!function_exists('wordpress_gulp_starter_setup')) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'wordpress_gulp_starter_custom_background_args',
+				'wp_guarapo_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -104,7 +104,7 @@ if (!function_exists('wordpress_gulp_starter_setup')) :
 		);
 	}
 endif;
-add_action('after_setup_theme', 'wordpress_gulp_starter_setup');
+add_action('after_setup_theme', 'wp_guarapo_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -113,27 +113,27 @@ add_action('after_setup_theme', 'wordpress_gulp_starter_setup');
  *
  * @global int $content_width
  */
-function wordpress_gulp_starter_content_width()
+function wp_guarapo_content_width()
 {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters('wordpress_gulp_starter_content_width', 640);
+	$GLOBALS['content_width'] = apply_filters('wp_guarapo_content_width', 640);
 }
-add_action('after_setup_theme', 'wordpress_gulp_starter_content_width', 0);
+add_action('after_setup_theme', 'wp_guarapo_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function wordpress_gulp_starter_widgets_init()
+function wp_guarapo_widgets_init()
 {
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Sidebar', 'wordpress_gulp_starter'),
+			'name'          => esc_html__('Sidebar', 'wp_guarapo'),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__('Add widgets here.', 'wordpress_gulp_starter'),
+			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -141,23 +141,23 @@ function wordpress_gulp_starter_widgets_init()
 		)
 	);
 }
-add_action('widgets_init', 'wordpress_gulp_starter_widgets_init');
+add_action('widgets_init', 'wp_guarapo_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function wordpress_gulp_starter_scripts()
+function wp_guarapo_scripts()
 {
-	wp_enqueue_style('wordpress_gulp_starter-style', get_stylesheet_uri(), array(), _S_VERSION);
-	wp_style_add_data('wordpress_gulp_starter-style', 'rtl', 'replace');
+	wp_enqueue_style('wp_guarapo-style', get_stylesheet_uri(), array(), _S_VERSION);
+	wp_style_add_data('wp_guarapo-style', 'rtl', 'replace');
 
-	wp_enqueue_script('wordpress_gulp_starter-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('wp_guarapo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
 }
-add_action('wp_enqueue_scripts', 'wordpress_gulp_starter_scripts');
+add_action('wp_enqueue_scripts', 'wp_guarapo_scripts');
 
 
 /**

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wordpress_gulp_starter
+ * @package wp_guarapo
  */
 
 get_header();

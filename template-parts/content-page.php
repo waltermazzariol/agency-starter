@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wordpress_gulp_starter
+ * @package wp_guarapo
  */
 
 ?>
@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php wordpress_gulp_starter_post_thumbnail(); ?>
+	<?php wp_guarapo_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -22,7 +22,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wordpress_gulp_starter' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp_guarapo' ),
 				'after'  => '</div>',
 			)
 		);
@@ -36,7 +36,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'wordpress_gulp_starter' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'wp_guarapo' ),
 						array(
 							'span' => array(
 								'class' => array(),

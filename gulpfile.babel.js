@@ -21,7 +21,7 @@ const server = browserSync.create();
 
 export const serve = done => {
   server.init({
-    proxy: "http://localhost:8080/starter/" // put your local website link here
+    proxy: "http://localhost/gulp-theme/" // put your local website link here
   });
   done();
 };

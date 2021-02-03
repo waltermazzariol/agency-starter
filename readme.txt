@@ -1,4 +1,4 @@
-=== wordpress_gulp_starter ===
+=== wp_guarapo ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -10,7 +10,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called wordpress_gulp_starter.
+A starter theme called wp_guarapo.
 
 == Description ==
 
@@ -26,7 +26,7 @@ Description
 
 = Does this theme support any plugins? =
 
-wordpress_gulp_starter includes support for WooCommerce and for Infinite Scroll in Jetpack.
+wp_guarapo includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wordpress_gulp_starter
+ * @package wp_guarapo
  */
 
 ?>
@@ -16,20 +16,20 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php
-			wordpress_gulp_starter_posted_on();
-			wordpress_gulp_starter_posted_by();
+			wp_guarapo_posted_on();
+			wp_guarapo_posted_by();
 			?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php wordpress_gulp_starter_post_thumbnail(); ?>
+	<?php wp_guarapo_post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php wordpress_gulp_starter_entry_footer(); ?>
+		<?php wp_guarapo_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

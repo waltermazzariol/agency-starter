@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package wordpress_gulp_starter
+ * @package wp_guarapo
  */
 
 ?>
@@ -25,7 +25,7 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
-		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wordpress_gulp_starter'); ?></a>
+		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
 		<header class="site-header">
 			<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" id="mainNav">
 				<div class="container">

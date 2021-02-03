@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package wordpress_gulp_starter
+ * @package wp_guarapo
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function wordpress_gulp_starter_jetpack_setup() {
+function wp_guarapo_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'wordpress_gulp_starter_infinite_scroll_render',
+			'render'    => 'wp_guarapo_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function wordpress_gulp_starter_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'wordpress_gulp_starter-style',
+				'stylesheet' => 'wp_guarapo-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,12 +48,12 @@ function wordpress_gulp_starter_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'wordpress_gulp_starter_jetpack_setup' );
+add_action( 'after_setup_theme', 'wp_guarapo_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function wordpress_gulp_starter_infinite_scroll_render() {
+function wp_guarapo_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

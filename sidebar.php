@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package wordpress_gulp_starter
+ * @package wp_guarapo
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

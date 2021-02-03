@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wordpress_gulp_starter
+ * @package wp_guarapo
  */
 
 ?>
@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				wordpress_gulp_starter_posted_on();
-				wordpress_gulp_starter_posted_by();
+				wp_guarapo_posted_on();
+				wp_guarapo_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php wordpress_gulp_starter_post_thumbnail(); ?>
+	<?php wp_guarapo_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wordpress_gulp_starter' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp_guarapo' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +50,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wordpress_gulp_starter' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp_guarapo' ),
 				'after'  => '</div>',
 			)
 		);
@@ -58,6 +58,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php wordpress_gulp_starter_entry_footer(); ?>
+		<?php wp_guarapo_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
