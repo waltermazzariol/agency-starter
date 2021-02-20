@@ -1,0 +1,22 @@
+
+.biography{
+    .title{
+        color: $primary;
+        line-height: 1rem;
+        font-weight: 700;
+        margin-top: 3rem;
+    }
+    .subtitle{
+        color: $primary;
+        margin-bottom: 2rem;
+    }
+    img{
+        margin: auto;
+    }
+}
+
+.biografia{
+    img{
+        max-height: 490px;
+    }
+}

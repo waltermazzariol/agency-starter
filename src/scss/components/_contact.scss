@@ -1,0 +1,33 @@
+.contact{
+  
+    &-item{
+        background: $green-light;
+        color: $white;
+        padding: 20px 25px;
+        hr{
+            border-top-color:$white;
+        }
+        .title{
+            font-weight: 700;
+        }
+        .description{
+            font-size: 0.8rem;
+        }
+        img{
+            max-height: 35px;
+        }
+    }
+    &-item:first-child{
+        background: $secondary;
+        color: $primary;
+        hr{
+            border-top-color:$primary;
+        }
+    }
+    &-item:last-child{
+        background: $primary;
+    }
+    &-wrapper{    
+        margin-top: -60px;
+    }
+}

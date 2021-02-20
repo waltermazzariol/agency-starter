@@ -1,20 +1,20 @@
 // Base styling for the navbar
 #mainNav {
     background-color: $navbar-color;
-    @include BoxShadow(2);
     min-height: $navbar-height;
+    padding: 0 1rem;
     .navbar {
         &-brand {
             font-family: $navbar-font-family;
             color: $navbar-text-color;
             text-transform: uppercase;
             font-size: 1rem;
-            margin-right: calc(55% - 60px);
+            margin: auto;
             img {
-                max-width: 145px;
-                max-height: 30px;
+                max-width: 250px;
             }
         }
+       
         &-toggler {
             border-color: transparent;
             &-icon {
@@ -23,6 +23,29 @@
             }
             &:focus {
                 outline: none;
+            }
+        }
+    }
+}
+
+.pre-navbar {
+    background-color: $secondary;
+    min-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-item {
+        .textwidget {
+            font-size: 0.7rem;
+            color: $primary;
+        }
+        .social-icon{
+            margin-left: 2rem;
+            i{
+                font-size: 1rem;
+                margin: 0 0.5rem;
+                color: $white;
+                padding: 0.5rem;
             }
         }
     }

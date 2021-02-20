@@ -1,0 +1,37 @@
+.carousel {
+    @include BoxShadow(2);
+    border-radius: 10px;
+    max-width: 80%;
+    max-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    &-indicators {
+        bottom: -20px;
+        li {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $gray-500;
+        }
+    }
+    &-item {
+        padding: 3rem;
+        .quote {
+            max-width: 90px;
+        }
+        .name {
+            position: relative;
+            font-size: 1.3rem;
+            &:after {
+                height: 3px;
+                content: "";
+                position: absolute;
+                background-color: $secondary;
+                top: 20px;
+                margin-left: 0.5rem;
+                width: 5%;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,14 +1,37 @@
-.box-image {
-    position: relative;
+.box-fluid {
+    top: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    padding-bottom: 200px;
-    .fluido {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
+    &-image {
+      height: 100%;
+      width: 100%;
+      -o-object-position: center;
+      object-position: center;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+  .banner{
+      position: relative;
+      .content{
+          background-color: rgba($color: #386771, $alpha: 0.4);
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          h3{
+              color: $white;
+              font-size: 2.5rem;
+              margin-bottom: 1.5rem;
+          }
+          .btn{
+            max-width: 125px;
+            align-self: center;
+          }
       }
   }

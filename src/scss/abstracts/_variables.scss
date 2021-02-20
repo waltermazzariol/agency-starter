@@ -3,13 +3,20 @@
 // -----------------------------------------------------------------------------
 // https://bootstrapvars.com/4.4/
 
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+//variables
+
 $red:                         #f05555;
+$green:                       #386771;
+$green-light:                 #577D83;
+$beige:                       #E7DBD5;
+$light_beige:                 #FAF1ED;
 $gray-100:                    #f7f7f7;
 $gray-200:                    #e4e4e4;
 $gray-900:                    #30302e;
-$beige-100:                   #f0ebe3;
-$primary:                       $gray-900;
-$secondary:                     $beige-100;
+$primary:                       $green;
+$secondary:                     $beige;
 $success:                       $secondary;
 $info:                          $gray-900;
 $warning:                       $primary;
@@ -18,7 +25,7 @@ $black:                       #000000;
 
 
 // Text Colors
-$text-color-1:                  #111111;
+$text-color-1:                  #757575;
 $text-color-2:                  $primary;
 $text-color-3:                  $black;
 $text-color-4:                  #031532;
@@ -29,6 +36,7 @@ $font-family-playfair:          "Playfair Display", serif;
 $font-family-heebo:             "Heebo", sans-serif;
 $font-family-roboto:            "Roboto", sans-serif;
 $font-family-natosans:          "Nato Sans", sans-serif;
+$font-family-newscycle:         "News Cycle", sans-serif;
 
 // Font Size
 $font-size-base: 1rem;
@@ -42,12 +50,12 @@ $font-weight-semibold:          600;
 $font-weight-bold:              700;
 $font-weight-bolder:            800;
 $font-weight-black:             900;
-$font-weight-base:              $font-weight-light;
+$font-weight-base:              $font-weight-normal;
 $line-height-base:              1.5;
 
 // Header
 $h1-font-size:                  $font-size-base * 3;
-$h2-font-size:                  $font-size-base * 2.4375;
+$h2-font-size:                  $font-size-base * 2;
 $h3-font-size:                  $font-size-base * 1.5;
 $h4-font-size:                  $font-size-base * 0.9375;
 $h5-font-size:                  $font-size-base * 0.75;
@@ -66,7 +74,7 @@ $h3-font-size-touch:            $font-size-base * 1.0625;
 $h4-font-size-touch:            $font-size-base * 0.875;
 $h5-font-size-touch:            $font-size-base * 0.75;
 $h6-font-size-touch:            $font-size-base * 0.6875;
-$h1-line-height-touch:          $font-size-base * 2.5;
+$h1-line-height-touch:          $font-size-base * 3;
 $h2-line-height-touch:          $font-size-base * 2.25;
 $h3-line-height-touch:          $font-size-base * 1.5;
 $h4-line-height-touch:          $font-size-base * 1.5;
@@ -94,8 +102,8 @@ $container-max-widths: (
 );
 
 // Font overrides
-$font-family-sans-serif: $font-family-natosans;
-$font-family-serif: $font-family-roboto;
+$font-family-sans-serif: $font-family-newscycle;
+$font-family-serif: $font-family-newscycle;
 
 $font-family-base: $font-family-serif !default;
 $headings-font-family: $font-family-sans-serif !default;

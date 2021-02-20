@@ -8,6 +8,10 @@
 html {
   box-sizing: border-box;
 }
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
@@ -27,4 +31,30 @@ html {
 a {
   color: $red;
   text-decoration: none;
+}
+.bg{
+  &-primary{
+    background-color: $primary;
+  }
+  &-secondary{
+    background-color: $secondary;
+  }
+  &-light-green{
+    background-color: $green-light;
+  }
+  &-beige{
+    background-color: $light_beige;
+  }
+  &-gray{
+    background-color: $gray-100;
+  }
+}
+
+img{
+  max-width: 100%;
+}
+
+.row{
+  margin-right: 15px;
+  margin-left: 15px;
 }

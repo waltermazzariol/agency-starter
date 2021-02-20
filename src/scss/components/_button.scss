@@ -1,33 +1,32 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
-.btn{
-  &-full{
+.btn {
+  &-full {
     width: 100%;
   }
-    &-basic{
-    padding: 0.7rem 4.5rem;
+  &-basic {
+    padding: 0.3rem 1.5rem;
     font-size: 0.85rem;
-    text-transform: uppercase;
-    border-radius: 5px;
-    margin: 1rem 0;
-    background-color: $black;
-    color: #FFFFFF;
+    font-weight: 700;
+    background-color: $primary;
+    border-radius: 4;
+    color: #ffffff;
     a {
       color: inherit;
       i {
         color: inherit;
       }
     }
-    &:hover{
+    &:hover {
       background-color: lighten($color: #000000, $amount: 20);
-      color: #FFFFFF;
+      color: #ffffff;
       a {
-        color: #FFFFFF;
+        color: #ffffff;
         i {
-          color: #FFFFFF;
+          color: #ffffff;
         }
       }
     }
-    }
+  }
 }
