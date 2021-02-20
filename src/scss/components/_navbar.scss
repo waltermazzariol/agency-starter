@@ -1,11 +1,12 @@
 // Base styling for the navbar
 #mainNav {
     background-color: $navbar-color;
-    @include BoxShadow(2);
     min-height: $navbar-height;
+    @include BoxShadow(2);
     .navbar {
         &-brand {
             font-family: $navbar-font-family;
+            font-weight: $font-weight-bold;
             color: $navbar-text-color;
             text-transform: uppercase;
             font-size: 1rem;

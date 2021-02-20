@@ -27,7 +27,8 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
 		<header class="site-header">
-			<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" id="mainNav">
+			<div class="bg-secondary d-none d-sm-block"><div class="pre-navbar container"><?php dynamic_sidebar('pre-navbar'); ?></div></div>
+			<nav class="navbar navbar-expand-md navbar-light" id="mainNav">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +37,9 @@
 					<a class="navbar-brand" href="<?php bloginfo('url') ?>">
 						<?php
 						if (has_custom_logo()) {
-							the_custom_logo();
+						$custom_logo_id = get_theme_mod( 'custom_logo' );
+						$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+						echo '<img alt="logo" src="'.$image[0].'"/>';
 						} else {
 							bloginfo('name');
 						}

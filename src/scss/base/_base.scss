@@ -5,10 +5,13 @@
 /**
  * Set up a decent box model on the root element
  */
-html {
+ html {
   box-sizing: border-box;
 }
-
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value

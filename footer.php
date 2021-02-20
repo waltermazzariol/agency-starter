@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -10,25 +11,37 @@
  */
 
 ?>
+<section class="footer py-5 bg-primary">
+	<div class="container">
+		<div class="row text-white">
+			<div class="col-sm-12 col-md-6">
+				<?php dynamic_sidebar('footer_area_one'); ?>
+			</div>
 
-	<footer id="colophon" class="site-footer container">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp_guarapo' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'wp_guarapo' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'wp_guarapo' ), 'wp_guarapo', '<a href="http://guarapomedia.com/">guarapomedia.com</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+			<div class="col-sm-12 col-md-2">
+				<?php dynamic_sidebar('footer_area_two'); ?>
+			</div>
+
+			<div class="col-sm-12 col-md-2">
+				<?php dynamic_sidebar('footer_area_three'); ?>
+			</div>
+
+			<div class="col-sm-12 col-md-2">
+				<?php dynamic_sidebar('footer_area_four'); ?>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer id="colophon" class="site-footer container-fluid bg-primary">
+	<div class="site-info text-center">
+		<a href="https://guarapomedia.com/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/guarapo_logo.svg" /></a>
+	</div><!-- .site-info -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>
