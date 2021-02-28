@@ -2,15 +2,36 @@
 #mainNav {
     background-color: $navbar-color;
     min-height: $navbar-height;
-    @include BoxShadow(2);
-    .navbar {
+    .nav-link{
+        color: #FFFFFF;
+        font-weight: $navbar-font-weight;
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin-left: 1rem;
+        &:hover{
+            color: $gray-200;
+        }
+    }
+    .navbar {   
         &-brand {
             font-family: $navbar-font-family;
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-light;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
             color: $navbar-text-color;
             text-transform: uppercase;
-            font-size: 1rem;
-            margin-right: calc(55% - 60px);
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+            text-align:center;
+            @include media-breakpoint-up(lg) {
+                font-size: 1.5rem;
+                letter-spacing: 3px;
+            }
+            .tagline{
+                font-size: 0.7rem;
+                font-weight: 300;
+            }
             img {
                 max-width: 145px;
                 max-height: 30px;
@@ -19,11 +40,34 @@
         &-toggler {
             border-color: transparent;
             &-icon {
-                // background-image: url("../../../assets/img/menu.svg");
+                background-image: url("../../dist/assets/images/menu.svg");
                 max-width: 85%;
             }
             &:focus {
                 outline: none;
+            }
+        }
+    }
+}
+
+#mainNav.home{
+    background-color: transparent;
+    margin-bottom: -$navbar-height;
+    .nav-link{
+    color: $primary;
+    }
+    .navbar {   
+        &-brand {
+            color: $primary;
+        }
+        &-toggler {
+            &-icon {
+                background-image: url("../../dist/assets/images/menu_dark.svg");
+            }
+        }
+        &-collapse{
+            @include media-breakpoint-down(sm) {
+            margin-bottom: $navbar-height;
             }
         }
     }

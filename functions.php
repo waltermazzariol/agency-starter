@@ -211,6 +211,30 @@ if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Add font awesome support
+ */
+
+add_action('wp_enqueue_scripts', 'tthq_add_custom_fa_css');
+
+function tthq_add_custom_fa_css()
+{
+	wp_enqueue_style('custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
+}
+
+/**
+ * Add animaate support
+ */
+
+add_action('wp_enqueue_scripts', 'add_animate_css');
+
+function add_animate_css()
+{
+	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.css');
+	wp_enqueue_script('wow', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js', array(), '', true );
+
+}
+
 // Allow SVG
 function add_file_types_to_uploads($file_types)
 {
@@ -220,3 +244,20 @@ function add_file_types_to_uploads($file_types)
 	return $file_types;
 }
 add_filter('upload_mimes', 'add_file_types_to_uploads');
+
+//Footer Widget
+function register_widget_areas()
+{
+
+	register_sidebar(array(
+		'name'          => 'Footer area one',
+		'id'            => 'footer_area_one',
+		'description'   => 'This widget area description',
+		'before_widget' => '<section class="footer-area footer-area-one">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	));
+}
+
+add_action('widgets_init', 'register_widget_areas');

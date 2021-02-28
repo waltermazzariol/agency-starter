@@ -1,0 +1,15 @@
+.hero {
+    background-position: center center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    min-height: 100vh;
+    margin-bottom: -1px;
+    background-attachment: fixed;
+    @include media-breakpoint-down(sm) {
+        min-height: 80vh;
+        background-attachment: scroll;
+    }
+    @supports (-webkit-touch-callout: none) {
+        background-attachment: scroll;
+    }
+}

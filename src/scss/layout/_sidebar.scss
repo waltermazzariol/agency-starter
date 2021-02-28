@@ -1,0 +1,48 @@
+@include media-breakpoint-down(sm) {
+  aside {
+    width: 100%;
+    background-color: $primary;
+    margin-bottom: -1px;
+  }
+}
+
+/* Social Icons */
+#social_side_links {
+  position: fixed;
+  top: 40%;
+  right: 1rem;
+  padding: 0;
+  list-style: none;
+  z-index: 99;
+  li {
+    display: block;
+    text-align: center;
+    i {
+      color: $purple;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    position: relative; 
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;  
+    li {
+      position: relative;
+      float: left;
+      text-align: center;
+      i {
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .icon-purple{
+    color: $purple;
+  }
+}
+

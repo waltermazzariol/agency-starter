@@ -20,7 +20,15 @@
 // 5. Components
 @import
   './components/navbar',  
+  './components/hero',  
   './components/footer', 
   './components/image',
+  './components/modal',
   './components/button',
   './components/input';
+
+// 6. layout
+
+  @import
+  './layout/sidebar',
+  './layout/video';

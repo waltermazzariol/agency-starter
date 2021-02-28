@@ -27,14 +27,13 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
 		<header class="site-header">
-			<div class="bg-secondary d-none d-sm-block"><div class="pre-navbar container"><?php dynamic_sidebar('pre-navbar'); ?></div></div>
-			<nav class="navbar navbar-expand-md navbar-light" id="mainNav">
+			<nav class="navbar navbar-expand-md <?php if ( is_front_page() ) {echo 'home'; } ?>" id="mainNav">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<a class="navbar-brand" href="<?php bloginfo('url') ?>">
+					<a class="navbar-brand wow" href="<?php bloginfo('url') ?>">
 						<?php
 						if (has_custom_logo()) {
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -42,8 +41,10 @@
 						echo '<img alt="logo" src="'.$image[0].'"/>';
 						} else {
 							bloginfo('name');
+							echo '<br><div class="tagline">'.get_bloginfo ( 'description' ).'</div>';
 						}
-						?></a>
+						?>
+					</a>
 					<?php
 					wp_nav_menu(array(
 						'theme_location'    => 'menu-1',
@@ -51,7 +52,7 @@
 						'container'         => 'div',
 						'container_class'   => 'collapse navbar-collapse',
 						'container_id'      => 'bs-example-navbar-collapse-1',
-						'menu_class'        => 'nav navbar-nav ml-auto align-items-center',
+						'menu_class'        => 'nav navbar-nav ml-auto align-items-center wow',
 						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 						'walker'            => new WP_Bootstrap_Navwalker(),
 					));
