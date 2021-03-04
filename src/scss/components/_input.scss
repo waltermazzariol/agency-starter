@@ -1,18 +1,19 @@
-input{
+input {
     overflow: visible;
     padding: 1rem;
     background: $white;
-    border: 1px solid rgba(0,0,0,.12);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     margin-bottom: 1rem;
     min-width: 250px;
-    &[type="submit"]{
+    &[type="submit"] {
         min-width: 100px;
     }
-    &.wpcf7-form-control.wpcf7-text{
+    &.wpcf7-form-control.wpcf7-text {
         background-color: $white;
+        max-width: 90%;
     }
 }
-textarea.wpcf7-form-control.wpcf7-textarea{
+textarea.wpcf7-form-control.wpcf7-textarea {
     background-color: $white;
     border: 1px solid rgba(0, 0, 0, 0.12);
     max-width: 90%;
