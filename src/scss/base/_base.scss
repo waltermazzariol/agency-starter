@@ -48,6 +48,9 @@ a {
   &-gray{
     background-color: $gray-100;
   }
+  &-beige-lighter{
+    background-color: $bg-beigie;
+  }
 }
 
 img{
@@ -57,4 +60,10 @@ img{
 .row{
   margin-right: 15px;
   margin-left: 15px;
+}
+
+
+.hideme
+{
+    opacity:0;
 }

@@ -40,13 +40,25 @@
             color: $primary;
         }
         .social-icon{
-            margin-left: 2rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+
             i{
                 font-size: 1rem;
                 margin: 0 0.5rem;
                 color: $white;
                 padding: 0.5rem;
             }
+        }
+    }
+    .icon{
+        &-phone{
+            max-height: 15px;
+    margin-right: 0.2rem;
+        }
+        &-email{
+            max-width: 15px;
+    margin-right: 0.2rem;
         }
     }
 }
