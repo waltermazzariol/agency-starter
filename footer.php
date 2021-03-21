@@ -11,7 +11,7 @@
  */
 
 ?>
-<section class="footer py-5 bg-primary">
+<section class="footer py-5 bg-blue">
 	<div class="container">
 		<div class="row text-white">
 			<div class="col-sm-12 col-md-6">
@@ -33,7 +33,7 @@
 	</div>
 </section>
 
-<footer id="colophon" class="site-footer container-fluid bg-primary">
+<footer id="colophon" class="site-footer container-fluid bg-blue">
 	<div class="site-info text-center">
 		<a href="https://guarapomedia.com/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/guarapo_logo.svg" /></a>
 	</div><!-- .site-info -->

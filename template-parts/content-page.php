@@ -9,12 +9,14 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mt-5 mb-3'); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mb-3'); ?>>
+	<header class="entry-header container-fluid hero">
+		<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+    echo '<section class="hero-img" style="background-image: url('.esc_url($featured_img_url).');"></section>'; ?>
+		<?php if(!is_front_page()):
+	the_title( '<h1 class="entry-title">', '</h1>' ); 
+	endif ?>
 	</header><!-- .entry-header -->
-
-	<?php wp_guarapo_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -30,8 +32,8 @@
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
+	<footer class="entry-footer">
+		<?php
 			edit_post_link(
 				sprintf(
 					wp_kses(
@@ -49,6 +51,6 @@
 				'</span>'
 			);
 			?>
-		</footer><!-- .entry-footer -->
+	</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->

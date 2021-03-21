@@ -12,3 +12,11 @@
         object-position: center center;
       }
   }
+
+.wp-block-image{
+    margin-bottom: 3em;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}

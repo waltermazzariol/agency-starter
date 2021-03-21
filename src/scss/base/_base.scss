@@ -12,6 +12,9 @@ html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body{
+  background-color: $green;
+}
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -30,4 +33,12 @@ html * {
 a {
   color: $red;
   text-decoration: none;
+}
+
+.bg-blue{
+  background-color: $blue;
+}
+
+.bg-light-green{
+  background-color: $light-green;
 }

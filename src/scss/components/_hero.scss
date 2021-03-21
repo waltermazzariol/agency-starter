@@ -1,0 +1,22 @@
+.hero {
+    padding: 0;
+    position: relative;
+    margin-bottom: 6rem;
+
+    &-img {
+        height: 60vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
+
+    .entry-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: $white;
+        text-shadow: $text-shadow;
+    }
+}

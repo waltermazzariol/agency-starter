@@ -3,9 +3,13 @@
 // -----------------------------------------------------------------------------
 // https://bootstrapvars.com/4.4/
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
 
 $red:                         #f05555;
+$light-green:                 #F2F9F3;
+$green:                       #E6F3E7;
+$dark-green:                  #A2B57F;
+$blue:                        #273745;
 $gray-100:                    #f7f7f7;
 $gray-200:                    #e4e4e4;
 $gray-900:                    #30302e;
@@ -26,9 +30,9 @@ $text-color-a:                  $black;
 // Font Family
 // $font-family-playfair:          "Playfair Display", serif;
 // $font-family-heebo:             "Heebo", sans-serif;
-// $font-family-roboto:            "Roboto", sans-serif;
+$font-family-roboto:            "Roboto Slab", sans-serif;
 // $font-family-natosans:          "Nato Sans", sans-serif;
-$font-family-josefin:           "Josefin Sans", sans-serif;
+// $font-family-josefin:           "Josefin Sans", sans-serif;
 
 // Font Size
 $font-size-base: 1rem;
@@ -94,19 +98,19 @@ $container-max-widths: (
 );
 
 // Font overrides
-$font-family-sans-serif: $font-family-josefin;
-$font-family-serif: $font-family-josefin;
+$font-family-sans-serif: $font-family-roboto;
+$font-family-serif: $font-family-roboto;
 
 $font-family-base: $font-family-serif !default;
 $headings-font-family: $font-family-sans-serif !default;
 
 // Custom variables
-$navbar-height: 60px;
+$navbar-height: 80px;
 
 $text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 $text-shadow-2: 0 1px 2px rgba(0, 0, 0, 0.5);
 
-$navbar-color: $primary;
+$navbar-color: transparent;
 $navbar-cta-color: #ffffff;
 $navbar-cta-bg-color: $primary;
 $navbar-text-color: #ffffff;
