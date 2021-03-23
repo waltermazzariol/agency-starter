@@ -17,3 +17,18 @@
         border: 2px solid $black;
     }
 }
+
+input.wpcf7-form-control.wpcf7-text{
+    background-color: $light-green;
+    border: none;
+    padding: 1rem 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+select.wpcf7-form-control.wpcf7-select{
+    background-color: $light-green;
+    border: none;
+    padding: 1rem 0.5rem;
+    margin-bottom: 1.5rem;
+    min-width: 250px;
+}

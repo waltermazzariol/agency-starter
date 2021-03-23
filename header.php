@@ -27,7 +27,7 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
 		<header class="site-header">
-			<nav class="navbar fixed-top navbar-expand-md" id="mainNav">
+			<nav class="navbar navbar-expand-md" id="mainNav">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
 						'container'         => 'div',
 						'container_class'   => 'collapse navbar-collapse',
 						'container_id'      => 'bs-example-navbar-collapse-1',
-						'menu_class'        => 'nav navbar-nav ml-auto align-items-center',
+						'menu_class'        => 'nav navbar-nav ml-auto align-items-center animated fadeIn ',
 						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 						'walker'            => new WP_Bootstrap_Navwalker(),
 					));

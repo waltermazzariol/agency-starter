@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Adlery';
+    src: url('Adlery.woff2') format('woff2'),
+        url('Adlery.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

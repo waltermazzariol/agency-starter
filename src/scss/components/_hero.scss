@@ -1,22 +1,23 @@
 .hero {
     padding: 0;
     position: relative;
-    margin-bottom: 6rem;
-
+    margin-bottom: 3rem;
     &-img {
-        height: 60vh;
+        height: 650px;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         width: 100%;
     }
-
     .entry-title {
         position: absolute;
-        bottom: 0;
+        bottom: 40px;
         left: 0;
         right: 0;
         text-align: center;
         color: $white;
         text-shadow: $text-shadow;
+        font-family: 'Adlery', sans-serif;
+        text-transform: capitalize;
     }
 }

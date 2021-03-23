@@ -252,3 +252,49 @@ function my_theme_archive_title( $title ) {
   
     return $title;
 }
+
+
+function register_widget_areas()
+{
+
+	register_sidebar(array(
+		'name'          => 'Footer area for instagram',
+		'id'            => 'footer_area_one',
+		'description'   => 'This widget area description',
+		'before_widget' => '<section class="footer-area footer-area-one animated fadeIn">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="text-center">',
+		'after_title'   => '</h3>',
+	));
+
+	register_sidebar(array(
+		'name'          => 'Footer area two',
+		'id'            => 'footer_area_two',
+		'description'   => 'This widget area description',
+		'before_widget' => '<section class="footer-area footer-area-two animated fadeIn text-white mb-4">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="text-center text-white">',
+		'after_title'   => '</h3>',
+	));
+
+	register_sidebar(array(
+		'name'          => 'Footer area three',
+		'id'            => 'footer_area_three',
+		'description'   => 'This widget area description',
+		'before_widget' => '<section class="footer-area footer-area-three animated fadeIn text-white">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="text-center text-white">',
+		'after_title'   => '</h3>',
+	));
+	register_sidebar(array(
+		'name'          => 'Footer area four',
+		'id'            => 'footer_area_four',
+		'description'   => 'This widget area description',
+		'before_widget' => '<section class="footer-area footer-area-four animated fadeIn text-white">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="text-center text-white">',
+		'after_title'   => '</h3>',
+	));
+}
+
+add_action('widgets_init', 'register_widget_areas');

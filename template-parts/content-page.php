@@ -14,11 +14,11 @@
 		<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
     echo '<section class="hero-img" style="background-image: url('.esc_url($featured_img_url).');"></section>'; ?>
 		<?php if(!is_front_page()):
-	the_title( '<h1 class="entry-title">', '</h1>' ); 
+	the_title( '<h1 class="entry-title animated fadeIn ">', '</h1>' ); 
 	endif ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content animated fadeIn ">
 		<?php
 		the_content();
 
