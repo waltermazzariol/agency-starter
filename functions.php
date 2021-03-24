@@ -261,8 +261,8 @@ function register_widget_areas()
 		'name'          => 'Footer area for instagram',
 		'id'            => 'footer_area_one',
 		'description'   => 'This widget area description',
-		'before_widget' => '<section class="footer-area footer-area-one animated fadeIn">',
-		'after_widget'  => '</section>',
+		'before_widget' => '<section class="footer-area footer-area-one animated fadeIn bg-light-green px-0 py-5"><div class="container-800">',
+		'after_widget'  => '</div></section>',
 		'before_title'  => '<h3 class="text-center">',
 		'after_title'   => '</h3>',
 	));
@@ -271,7 +271,7 @@ function register_widget_areas()
 		'name'          => 'Footer area two',
 		'id'            => 'footer_area_two',
 		'description'   => 'This widget area description',
-		'before_widget' => '<section class="footer-area footer-area-two animated fadeIn text-white mb-4">',
+		'before_widget' => '<section class="footer-area footer-area-two animated fadeIn text-center text-white mb-4">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="text-center text-white">',
 		'after_title'   => '</h3>',
@@ -298,3 +298,14 @@ function register_widget_areas()
 }
 
 add_action('widgets_init', 'register_widget_areas');
+
+/**
+ * Add font awesome support
+ */
+
+add_action('wp_enqueue_scripts', 'tthq_add_custom_fa_css');
+
+function tthq_add_custom_fa_css()
+{
+	wp_enqueue_style('custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
+}

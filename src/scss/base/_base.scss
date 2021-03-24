@@ -42,3 +42,9 @@ a {
 .bg-light-green{
   background-color: $light-green;
 }
+
+.gm_column-reverse{
+  @include media-breakpoint-down(sm) {
+    flex-direction: column-reverse
+  }
+}

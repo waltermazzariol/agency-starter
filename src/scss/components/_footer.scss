@@ -5,3 +5,9 @@
         margin-bottom: 1rem;
     }
 }
+
+.footer{
+    @include media-breakpoint-down(sm) {
+        text-align: center;
+    }
+}

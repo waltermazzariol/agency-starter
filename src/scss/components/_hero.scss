@@ -3,11 +3,26 @@
     position: relative;
     margin-bottom: 3rem;
     &-img {
-        height: 650px;
+        height: 619px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         width: 100%;
+        @include media-breakpoint-down(sm){
+            height: 530px;
+        }
+    }
+    &-slider{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
+        min-height: 619px;
+        min-width: 100%;
+        @include media-breakpoint-down(sm){
+            min-height: 530px;
+        }
     }
     .entry-title {
         position: absolute;

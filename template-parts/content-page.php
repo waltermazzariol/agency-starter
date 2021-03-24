@@ -10,13 +10,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mb-3'); ?>>
+	<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+	if($featured_img_url): ?>
 	<header class="entry-header container-fluid hero">
-		<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+		<?php
     echo '<section class="hero-img" style="background-image: url('.esc_url($featured_img_url).');"></section>'; ?>
 		<?php if(!is_front_page()):
 	the_title( '<h1 class="entry-title animated fadeIn ">', '</h1>' ); 
 	endif ?>
 	</header><!-- .entry-header -->
+	<?php endif ?>
 
 	<div class="entry-content animated fadeIn ">
 		<?php

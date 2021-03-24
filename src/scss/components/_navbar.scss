@@ -7,8 +7,7 @@
     margin-bottom: -108px;  
     z-index: 1;  
     @include media-breakpoint-down(sm) {
-        // background-color: #FFFFFF;
-
+        margin-bottom: 0;  
     }
     .navbar {
         &-brand {
@@ -17,13 +16,16 @@
             color: $navbar-text-color;
             text-transform: uppercase;
             font-size: 1rem;
-
+            margin-top: -10px;
+            padding-top: 0;
             @include media-breakpoint-down(sm) {
                 margin-right: calc(55% - 60px);
             }
-
             img {
-                max-width: 80px;
+                max-width: 98px;
+                @include media-breakpoint-down(sm) {
+                    max-width: 80px;
+                }
             }
         }
         &-toggler {
@@ -42,7 +44,11 @@
         font-family: $navbar-font-family;
         font-weight: $font-weight-bold;
         color: $navbar-text-color;
-        text-shadow: $text-shadow;
         text-transform: uppercase;
+        color: $black;
+        @include media-breakpoint-up(md) {
+            text-shadow: $text-shadow;
+            color: $white;
+        }
     }
 }

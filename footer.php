@@ -11,15 +11,10 @@
  */
 
 ?>
-<section class="container">
-	<div class="row text-white">
-		<div class="col-sm-12">
-				<?php dynamic_sidebar('footer_area_one'); ?>
-		</div>
-	</div>
-</section>
+
+<?php dynamic_sidebar('footer_area_one'); ?>
 <section class="footer py-5 bg-blue">
-	<div class="container">
+	<div class="container-800">
 		<div class="row text-white">
 			<div class="col-sm-12">
 				<?php dynamic_sidebar('footer_area_two'); ?>
@@ -32,14 +27,13 @@
 			</div>
 		</div>
 	</div>
-</section>
-
-<footer id="colophon" class="site-footer container-fluid bg-blue">
+	<footer id="colophon" class="site-footer container-fluid bg-blue">
 	<div class="site-info text-center">
 		<a href="https://guarapomedia.com/"><img
 				src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/guarapo_logo.svg" /></a>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
+</section>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
