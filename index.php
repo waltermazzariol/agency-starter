@@ -15,17 +15,17 @@
 get_header();
 ?>
 
-	<main id="primary" class=" container site-main">
+<main id="primary" class="container site-main">
 
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
+	<?php if ( have_posts() ) :	
+		if ( is_home() && ! is_front_page() ) :
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
+	<header>
+		<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+	</header>
+	<div class="container mt-4">
+		<div class="row">
+			<?php
 			endif;
 
 			/* Start the Loop */
@@ -37,11 +37,17 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/content', 'loop' );
 
 			endwhile;
+			?> </div>
+	</div> <?php
+		 the_posts_pagination(array(
 
-			the_posts_navigation();
+			'prev_text' => '<span>Anterior</span>',
+			'next_text' => '<span>Siguiente</span>'
+		  
+		  )); 
 
 		else :
 
@@ -50,8 +56,7 @@ get_header();
 		endif;
 		?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -36,6 +36,7 @@
         color: $white;
         font-size: 3rem;
         margin-bottom: 1rem;
+        font-weight: 700;
     }
     &-subtitle {
         color: $white;
@@ -56,5 +57,10 @@
          
             padding-left: 1.5rem;
         }
+    }
+    &--small{
+        background-position: center center;
+         min-height: 200px;
+        position: relative;
     }
 }

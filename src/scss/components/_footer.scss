@@ -1,7 +1,34 @@
+
+
 .site-footer{
     img{
         max-width: 80px;
         margin-top: 1rem;
         margin-bottom: 1rem;
+    }
+}
+
+.footer{
+    h3{
+        color: #FFFFFF;
+        font-size: 1.1rem;
+        @include media-breakpoint-up(lg) {
+            @include font-size(1.2rem);
+          }
+    }
+    h5{
+        color: #FFFFFF;
+        font-weight: 700;
+        font-size: 1rem;
+        @include media-breakpoint-up(lg) {
+            @include font-size(1.1rem);
+          }
+    }
+    hr{
+        border-color: #FFFFFF;
+        border-width: 1px;
+    }
+    .footer-area {
+        margin-bottom: 3rem;
     }
 }

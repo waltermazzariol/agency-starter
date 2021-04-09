@@ -27,9 +27,9 @@ if ($banner) :
 <section class="container py-4">
     <div class="row">
         <div class="col-12">
-            <h3 class="text-center"> <?php print_r($banner['titulo']); ?> </h3>
-            <h4 class="text-center"> <?php print_r($banner['subtitlo']); ?> </h4>
-            <div class="text-center"> <?php print_r($banner['descripcion']); ?> </div>
+            <h3 class="text-center animated fadeIn"> <?php print_r($banner['titulo']); ?> </h3>
+            <h4 class="text-center animated fadeIn"> <?php print_r($banner['subtitlo']); ?> </h4>
+            <div class="text-center animated fadeIn"> <?php print_r($banner['descripcion']); ?> </div>
             <hr class="line-center">
         </div>
     </div>
@@ -38,20 +38,20 @@ if ($banner) :
 <section class="container-fluid p-4 bg-beige-lighter">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <img src="<?php print_r($services_img); ?>" />
+            <div class="col-md-4">
+                <img class=" animated fadeIn" src="<?php print_r($services_img); ?>" />
             </div>
-            <div class="col-md-6 ">
+            <div class="col-md-8 d-flex flex-wrap w-100">
                 <?php $items = $services; if ($items) : foreach ($items as &$value) : ?>
-                <div class="d-flex align-items-center justify-content-around">
-                    <div class="item mr-4">
-                        <img class="icon-check" src="http://localhost/gulp-theme/wp-content/uploads/2021/02/check.svg"
+                <div class="d-flex align-items-center justify-content-start">
+                    <div class="item ml-3 mr-5">
+                        <img class="icon-check animated fadeIn" src="/sandbox/wp-content/uploads/2021/02/check.svg"
                             alt="check" />
                     </div>
                     <div class="item">
-                        <h4 class="strong mt-4"><?php echo $value['titulo']; ?></h4>
-                        <div class="mb-3"><?php echo $value['descripcion']; ?></div>
-                        <a class="btn btn-basic"
+                        <h4 class="strong mt-4 animated fadeIn"><?php echo $value['titulo']; ?></h4>
+                        <div class="mb-3 animated fadeIn"><?php echo $value['descripcion']; ?></div>
+                        <a class="btn btn-basic animated fadeIn"
                             href="<?php print_r($value['boton_url']); ?>"><?php print_r($value['boton_texto']); ?>
                         </a>
                     </div>

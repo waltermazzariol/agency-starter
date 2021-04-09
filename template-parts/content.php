@@ -9,12 +9,18 @@
 
 ?>
 
-<article class="container" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="col-md-4" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
+		if ( is_singular() ) : ?>
+			<header class="container-fluid cover--small mb-5">
+				<div class="container-fluid cover-wrapper">
+					<span class="container item">
+						<h1 class="cover-title animated fadeIn"><?php the_archive_title(); ?></h1>
+					</span>
+				</div>
+			</header>
+		<?php else : 
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
@@ -33,31 +39,7 @@
 
 	<div class="entry-content">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp_guarapo' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp_guarapo' ),
-				'after'  => '</div>',
-			)
-		);
+		the_excerpt()
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php wp_guarapo_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

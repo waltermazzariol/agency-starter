@@ -15,7 +15,7 @@
 
 body {
   font-size: 0.875rem;
-  font-weight: $font-weight-light;
+  font-weight: $font-weight-base;
   font-family: $font-family-base;
   letter-spacing: 0.4px;
   line-height: 1.5rem;
@@ -23,12 +23,14 @@ body {
   a {
     color: $text-color-a;
   }
-
   @include media-breakpoint-up(lg) {
     @include font-size(1rem);
   }
 }
 
+p{
+  letter-spacing: 0.04rem;
+}
 
 h1,
 h2,
@@ -46,18 +48,6 @@ h6,
 
   @include media-breakpoint-up(lg) {
     margin-bottom: 1rem;
-  }
-}
-
-ol,
-ul,
-p,
-blockquote,
-.preamble {
-  margin-bottom: 0.5rem;
-
-  @include media-breakpoint-up(lg) {
-    margin-bottom: 36px;
   }
 }
 
@@ -188,6 +178,16 @@ h6,
     opacity: 1;
 }
 
+.small{
+  color: $gray-600;
+}
+
 .strong{
   font-weight: 700;
+}
+
+.text{
+  &-primary{
+    color: $primary;
+  }
 }

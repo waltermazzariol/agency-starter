@@ -30,10 +30,10 @@ get_header(); ?>
                 $icon = get_sub_field('icon');
             ?>
         <div class="contact-item col-md-4 col-lg-3">
-            <img src="<?php echo $icon ?>" alt="icon" />
+            <img class="animated bounceInDown" src="<?php echo $icon ?>" alt="icon" />
             <hr>
-            <div class="title"><?php echo $title ?>:</div>
-            <div class="description"><?php echo $description ?></div>
+            <div class="title animated fadeIn"><?php echo $title ?>:</div>
+            <div class="description animated fadeIn"><?php echo $description ?></div>
         </div>
         <?php endwhile; ?>
     </div>
@@ -47,15 +47,15 @@ endif;
 <section class="biography container my-5">
     <div class="row justify-content-md-center">
         <div class="col-lg-6">
-            <img class="mx-auto d-block" src="<?php print_r($short_bio['image']); ?>" alt="biofrafia" />
+            <img class="mx-auto d-block animated fadeIn" src="<?php print_r($short_bio['image']); ?>" alt="biofrafia" />
         </div>
         <div class="col-lg-6">
-            <h3 class="title"><?php print_r($short_bio['title']); ?></h3>
-            <div class="subtitle"><?php print_r($short_bio['subtitle']); ?></div>
-            <p class="mb-3"><?php print_r($short_bio['description']); ?></p>
-            <button class="btn btn-basic" href="<?php print_r($short_bio['url_boton']); ?>">
+            <h3 class="title  animated fadeIn"><?php print_r($short_bio['title']); ?></h3>
+            <div class="subtitle animated fadeIn"><?php print_r($short_bio['subtitle']); ?></div>
+            <p class="mb-3 animated fadeIn"><?php print_r($short_bio['description']); ?></p>
+            <a class="btn btn-basic animated fadeIn" href="<?php print_r($short_bio['url_boton']); ?>">
                 <?php print_r($short_bio['texto_boton']); ?>
-            </button>
+            </a>
         </div>
     </div>
 </section>
@@ -65,50 +65,46 @@ endif;
 
 <?php $testimonios = get_field('testimonios'); if ($testimonios) : ?>
 <Section class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 col-md-4 px-0  box-container banner">
-                <div class="box-fluid">
-                    <img class="box-fluid-image" src="<?php echo esc_url($testimonios['image']); ?>" alt="profile" />
-                </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-4 px-0  box-container banner">
+            <div class="box-fluid">
+                <img class="box-fluid-image animated fadeIn" src="<?php echo esc_url($testimonios['image']); ?>" alt="profile" />
             </div>
-            <div class="col-sm-12 col-md-8 py-4">
-                <h2 class="mb-4 ml-2"> <?php print_r($testimonios['title']); ?></h2>
-                <div class="row">
-                    <div class="col-12">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <?php
+        </div>
+        <div class="col-sm-12 col-md-8 py-4">
+            <h2 class="mb-4 ml-2"> <?php print_r($testimonios['title']); ?></h2>
+            <div class="col-12">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <?php
                                     $testimonios_item = $testimonios['reviews'];
                                     if ($testimonios_item) :
                                         foreach ($testimonios_item as $key => $value) :
                                     ?>
-                                <div class="carousel-item <?php if ($key === 0) { echo ' active';} ?>">
-                                    <img class="quote mb-3"
-                                        src="<?php echo get_template_directory_uri(); ?>/dist/assets/image/quote.svg" />
-                                    <p class="description"><?php echo $value['description']; ?></p>
-                                    <h5 class="name"><?php echo $value['name']; ?></h5>
-                                </div>
-                                <?php endforeach; endif; ?>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                        <div class="carousel-item <?php if ($key === 0) { echo ' active';} ?>">
+                            <img class="quote mb-3"
+                                src="<?php echo get_template_directory_uri(); ?>/dist/assets/image/quote.svg" />
+                            <p class="description"><?php echo $value['description']; ?></p>
+                            <h5 class="name"><?php echo $value['name']; ?></h5>
                         </div>
+                        <?php endforeach; endif; ?>
                     </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </Section>
 <?php endif; ?>
@@ -117,9 +113,12 @@ endif;
 <section class="container-fluid"
     style="background-image: url('<?php echo esc_url($form['image']); ?>'); background-repeat: no-repeat; background-size: cover;">
     <div class="row justify-content-center">
-        <div class="my-4 p-4 col-md-8 bg-white formulario">
-            <h2 class="ml-2"> <?php print_r($form['title']); ?></h2>
-            <p class="mb-4 ml-2"> <?php print_r($form['subtitle']); ?></p>
+        <div class="my-4 p-4 col-md-8 bg-white formulario text-center">
+            <h2 class="ml-2 animated fadeIn"> <?php print_r($form['title']); ?></h2>
+            <p class="mb-4 ml-2 animated fadeIn"> <?php print_r($form['subtitle']); ?></p>
+            <a class="btn btn-basic animated fadeIn" href="<?php print_r($form['boton_url']); ?>">
+                <?php print_r($form['boton_texto']); ?>
+            </a>
         </div>
     </div>
 </section>

@@ -14,20 +14,16 @@
 <section class="footer py-5 bg-primary">
 	<div class="container">
 		<div class="row text-white">
-			<div class="col-sm-12 col-md-6">
+			<div class="col-sm-12 col-md-4">
 				<?php dynamic_sidebar('footer_area_one'); ?>
 			</div>
 
-			<div class="col-sm-12 col-md-2">
+			<div class="col-sm-12 col-md-4">
 				<?php dynamic_sidebar('footer_area_two'); ?>
 			</div>
 
-			<div class="col-sm-12 col-md-2">
+			<div class="col-sm-12 col-md-4">
 				<?php dynamic_sidebar('footer_area_three'); ?>
-			</div>
-
-			<div class="col-sm-12 col-md-2">
-				<?php dynamic_sidebar('footer_area_four'); ?>
 			</div>
 		</div>
 	</div>

@@ -136,8 +136,8 @@ function wp_guarapo_widgets_init()
 			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		)
 	);
 }
@@ -222,47 +222,37 @@ function register_widget_areas()
 		'before_widget' => '<span class="pre-navbar-item">',
 		'after_widget'  => '</span>',
 		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
+		'after_title'   => '</h3><hr>',
 	));
 
 	register_sidebar(array(
 		'name'          => 'Footer area one',
 		'id'            => 'footer_area_one',
 		'description'   => 'This widget area discription',
-		'before_widget' => '<section class="footer-area footer-area-one">',
+		'before_widget' => '<section class="footer-area footer-area-one animated fadeIn">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
+		'after_title'   => '</h3><hr>',
 	));
 
 	register_sidebar(array(
 		'name'          => 'Footer area two',
 		'id'            => 'footer_area_two',
 		'description'   => 'This widget area discription',
-		'before_widget' => '<section class="footer-area footer-area-two">',
+		'before_widget' => '<section class="footer-area footer-area-two animated fadeIn">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
+		'after_title'   => '</h3><hr>',
 	));
 
 	register_sidebar(array(
 		'name'          => 'Footer area three',
 		'id'            => 'footer_area_three',
 		'description'   => 'This widget area discription',
-		'before_widget' => '<section class="footer-area footer-area-three">',
+		'before_widget' => '<section class="footer-area footer-area-three animated fadeIn">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
-	));
-
-	register_sidebar(array(
-		'name'          => 'Footer area four',
-		'id'            => 'footer_area_four',
-		'description'   => 'This widget area discription',
-		'before_widget' => '<section class="footer-area footer-area-three">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
+		'after_title'   => '</h3><hr>',
 	));
 }
 
@@ -288,3 +278,77 @@ function add_file_types_to_uploads($file_types)
 	return $file_types;
 }
 add_filter('upload_mimes', 'add_file_types_to_uploads');
+
+/**
+ * Add animaate support
+ */
+
+function add_animate_css()
+{
+	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css');
+
+}
+add_action('wp_enqueue_scripts', 'add_animate_css');
+
+function my_theme_archive_title( $title ) {
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    } elseif ( is_tag() ) {
+        $title = single_tag_title( '', false );
+    } elseif ( is_author() ) {
+        $title = '<span class="vcard">' . get_the_author() . '</span>';
+    } elseif ( is_post_type_archive() ) {
+        $title = post_type_archive_title( '', false );
+    } elseif ( is_tax() ) {
+        $title = single_term_title( '', false );
+    }
+  
+    return $title;
+}
+ 
+add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
+
+/* 
+* delete shortcodes from exceprt
+*/
+
+add_filter( 'the_excerpt', 'remove_shortcodes_in_excerpt', 20 );
+
+function remove_shortcodes_in_excerpt( $content){
+    $content = strip_shortcodes($content);
+    $tagnames = array('et_pb_section', 'et_pb_row','et_pb_column','et_pb_text','et_pb_image');  // add shortcode tag name [box]content[/box] tagname = box
+    $content = do_shortcodes_in_html_tags( $content, true, $tagnames );
+
+    $pattern = get_shortcode_regex( $tagnames );
+    $content = preg_replace_callback( "/$pattern/", 'strip_shortcode_tag', $content );
+    return $content;
+}
+
+add_filter( 'the_content', 'remove_shortcodes_in_content', 20 );
+
+function remove_shortcodes_in_content( $content){
+    $content = strip_shortcodes($content);
+    $tagnames = array('et_pb_section', 'et_pb_row','et_pb_column','et_pb_text','et_pb_image');  // add shortcode tag name [box]content[/box] tagname = box
+    $content = do_shortcodes_in_html_tags( $content, true, $tagnames );
+
+    $pattern = get_shortcode_regex( $tagnames );
+    $content = preg_replace_callback( "/$pattern/", 'strip_shortcode_tag', $content );
+    return $content;
+}
+
+function custom_excerpt_length( $length ) {
+	return 15;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function wpdocs_excerpt_more( $more ) {
+    if ( ! is_single() ) {
+        $more = sprintf( '<a class="read-more d-block" href="%1$s">%2$s</a>',
+            get_permalink( get_the_ID() ),
+            __( 'Leer más', 'textdomain' )
+        );
+    }
+ 
+    return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );

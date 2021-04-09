@@ -3,10 +3,18 @@
     border-radius: 10px;
     max-width: 80%;
     max-height: 450px;
+
+    @include media-breakpoint-down(md) {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
     margin-left: auto;
     margin-right: auto;
+
     &-indicators {
         bottom: -5px;
+
         li {
             width: 10px;
             height: 10px;
@@ -14,14 +22,18 @@
             background-color: $gray-500;
         }
     }
+
     &-item {
         padding: 3rem;
+
         .quote {
             max-width: 70px;
         }
+
         .name {
             position: relative;
             font-size: 1.3rem;
+
             &:after {
                 height: 3px;
                 content: "";

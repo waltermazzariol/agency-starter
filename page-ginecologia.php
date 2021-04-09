@@ -30,7 +30,7 @@ get_header();
     <div class="container">
         <div class="row py-5">
             <div class="col-md-4 mb-3">
-                <img src="<?php print_r($section_1['image']); ?>" />
+                <img class=" animated fadeIn" src="<?php print_r($section_1['image']); ?>" />
             </div>
             <div class="col-md-8">
                 <h2> <?php print_r($section_1['titulo']); ?> </h2>
@@ -44,8 +44,8 @@ get_header();
                                 foreach ($items as &$value) :
                             ?>
                         <div class="col-md-4">
-                            <h4 class="strong mt-3"><?php echo $value['titulo']; ?></h4>
-                            <div><?php echo $value['descripcion']; ?></div>
+                            <h4 class="strong mt-3 animated fadeIn"><?php echo $value['titulo']; ?></h4>
+                            <div class=" animated fadeIn"><?php echo $value['descripcion']; ?></div>
                         </div>
                         <?php
                         endforeach;
@@ -53,7 +53,7 @@ get_header();
                     ?>
                     </div>
                 </div>
-                <div class="col-12 mt-5 text-center"><a class="btn btn-basic"
+                <div class="col-12 mt-5 text-center animated fadeIn"><a class="btn btn-basic"
                         href="<?php print_r($button['url']); ?>"><?php print_r($button['texto']); ?></a></div>
             </div>
         </div>
@@ -71,8 +71,8 @@ if ($section_2) :
     <div class="container">
         <div class="row py-5">
             <div class="col-md-8">
-                <h2> <?php print_r($section_2['titulo']); ?> </h2>
-                <div class="mb-3"> <?php print_r($section_2['descripcion']); ?> </div>
+                <h2 class=" animated fadeIn"> <?php print_r($section_2['titulo']); ?> </h2>
+                <div class="mb-3 animated fadeIn"> <?php print_r($section_2['descripcion']); ?> </div>
                 <div class="container">
                     <div class="row">
                         <?php $items = $section_2['items']; if ($items) : foreach ($items as &$value) : ?>
@@ -101,7 +101,7 @@ if ($section_2) :
     <div class="container">
         <div class="row py-5">
             <div class="col-md-4 mb-4">
-                <img src="<?php print_r($section_3['image']); ?>" />
+                <img class="animated fadeIn" src="<?php print_r($section_3['image']); ?>" />
             </div>
             <div class="col-md-8">
                 <h2> <?php print_r($section_3['titulo']); ?> </h2>
@@ -110,11 +110,11 @@ if ($section_2) :
                     <div class="row">
                         <?php $items = $section_3['items']; if ($items) : foreach ($items as &$value) : ?>
                         <div class="col-12">
-                            <h4 class="strong mt-4"><?php echo $value['titulo']; ?></h4>
-                            <div><?php echo $value['descripcion']; ?></div>
+                            <h4 class="strong mt-4 animated fadeIn"><?php echo $value['titulo']; ?></h4>
+                            <div class="animated fadeIn"><?php echo $value['descripcion']; ?></div>
                         </div>
                         <?php endforeach; endif; ?>
-                        <div class="col-12 mt-5 text-center"><a class="btn btn-basic"
+                        <div class="col-12 mt-5 text-center animated fadeIn"><a class="btn btn-basic"
                                 href="<?php print_r($button['url']); ?>"><?php print_r($button['texto']); ?></a></div>
                     </div>
                 </div>
@@ -133,8 +133,8 @@ if ($section_4) :
     <div class="container">
         <div class="row py-5">
             <div class="col-md-8">
-                <h2> <?php print_r($section_4['titulo']); ?> </h2>
-                <div class="mb-3"> <?php print_r($section_4['descripcion']); ?> </div>
+                <h2 class=" animated fadeIn"> <?php print_r($section_4['titulo']); ?> </h2>
+                <div class="mb-3 animated fadeIn"> <?php print_r($section_4['descripcion']); ?> </div>
                 <div class="container">
                     <div class="row">
                         <?php
@@ -144,14 +144,11 @@ if ($section_4) :
                                 foreach ($items as &$value) :
                             ?>
                         <div class="col-12">
-                            <h4 class="strong"><?php echo $value['titulo']; ?></h4>
-                            <div><?php echo $value['descripcion']; ?></div>
+                            <h4 class="strong animated fadeIn"><?php echo $value['titulo']; ?></h4>
+                            <div class="animated fadeIn"><?php echo $value['descripcion']; ?></div>
                         </div>
-                        <?php
-                        endforeach;
-                            endif;
-                    ?>
-                        <div class="col-12 mt-5 text-center mb-4"><a class="btn btn-basic"
+                        <?php endforeach; endif; ?>
+                        <div class="col-12 mt-5 text-center mb-4 animated fadeIn"><a class="btn btn-basic"
                                 href="<?php print_r($button['url']); ?>"><?php print_r($button['texto']); ?></a></div>
                     </div>
                 </div>
@@ -172,28 +169,23 @@ if ($section_5) :
     <div class="container">
         <div class="row py-5">
             <div class="col-md-4 mb-4">
-                <img src="<?php print_r($section_5['image']); ?>" />
+                <img class="animated fadeIn" src="<?php print_r($section_5['image']); ?>" />
             </div>
             <div class="col-md-8">
-                <h2> <?php print_r($section_5['titulo']); ?> </h2>
-                <div class="mb-3"> <?php print_r($section_5['descripcion']); ?> </div>
+                <h2 class=""> <?php print_r($section_5['titulo']); ?> </h2>
+                <div class="mb-3 animated fadeIn"> <?php print_r($section_5['descripcion']); ?> </div>
                 <div class="container">
                     <div class="row">
                         <?php
                             $index = 1;
                             $items = $section_5['items'];
-                            if ($items) :
-                                foreach ($items as &$value) :
-                            ?>
+                            if ($items) : foreach ($items as &$value) : ?>
                         <div class="col-12">
-                            <h4 class="strong mt-4"><?php echo $value['titulo']; ?></h4>
-                            <div class="mb-4"><?php echo $value['descripcion']; ?></div>
+                            <h4 class="strong mt-4 animated fadeIn"><?php echo $value['titulo']; ?></h4>
+                            <div class="mb-4 animated fadeIn"><?php echo $value['descripcion']; ?></div>
                         </div>
-                        <?php
-                        endforeach;
-                            endif;
-                    ?>
-                        <div class="col-12 mt-5 text-center"><a class="btn btn-basic"
+                        <?php endforeach; endif; ?>
+                        <div class="col-12 mt-5 text-center animated fadeIn"><a class="btn btn-basic"
                                 href="<?php print_r($button['url']); ?>"><?php print_r($button['texto']); ?></a></div>
                     </div>
                 </div>

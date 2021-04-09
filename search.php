@@ -37,7 +37,12 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_pagination(array(
+
+				'prev_text' => '<span>Anterior</span>',
+				'next_text' => '<span>Siguiente</span>'
+			  
+			  )); 
 
 		else :
 
