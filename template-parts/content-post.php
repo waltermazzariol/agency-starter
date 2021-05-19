@@ -9,17 +9,27 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mt-5 mb-3'); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
-	<?php wp_guarapo_post_thumbnail(); ?>
-
-	<div class="entry-content">
+<article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mb-3'); ?>>
+	<header class="container-fluid cover--small mb-5">
+		<div class="container-fluid cover-wrapper">
+			<span class="container item">
+				<h1 class="cover-title animated fadeIn text-center"><?php the_title(); ?></h1>
+			</span>
+		</div>
+	</header>
+	
+	<div class="container entry-content">
+		<div class="row">
+			<div class="col-md-8">
 		<?php
-		the_content();
-		?>
+		the_content(); ?>
+</div>
+<div class="col-md-4">
+	<?php get_sidebar(); ?>
+</div>	
+<?php
+		the_posts_pagination();
+				?>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

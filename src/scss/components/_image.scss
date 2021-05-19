@@ -12,3 +12,29 @@
         object-position: center center;
       }
   }
+  .wp-block-image{
+    img{
+      border-radius: 4px!important;;
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+  .card-image{
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .box-loop {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+      &-image {
+        position: absolute;
+        top: 0;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }

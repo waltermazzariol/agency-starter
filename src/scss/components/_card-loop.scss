@@ -1,0 +1,37 @@
+.card-loop{
+    @include BoxShadow(1);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    .entry-header, .entry-meta, .entry-content{
+        padding: 0 15px;
+    }
+    .entry-title{
+        margin-top: 1.5rem;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    .entry-content{
+        margin-top: auto;
+        a {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.pagination{
+    width: 100%;
+    justify-content: center;
+    margin: 1.5rem auto;
+    .page-numbers{
+        background-color: $primary;
+        color: $white;
+        padding: 5px 15px;
+        &.current{
+            background-color: $gray-500;
+        }
+    }
+}

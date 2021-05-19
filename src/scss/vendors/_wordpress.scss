@@ -1,8 +1,8 @@
 /* Navigation
 --------------------------------------------- */
-.site-main{
-	margin-top:  70px;
-}
+// .site-main{
+// 	margin-top:  70px;
+// }
 
 .main-navigation {
 	display: block;
@@ -106,17 +106,11 @@
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0 0 0;
 }
 
 .updated:not(.published) {
 	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
 }
 
 .page-links {
@@ -142,6 +136,12 @@
 
 .widget select {
 	max-width: 100%;
+}
+
+.widget-area{
+	li {
+    line-height: 2rem;
+	}
 }
 
 /* Media

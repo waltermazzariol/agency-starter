@@ -252,3 +252,14 @@ function my_theme_archive_title( $title ) {
   
     return $title;
 }
+
+/**
+ * Add font awesome support
+ */
+
+add_action('wp_enqueue_scripts', 'tthq_add_custom_fa_css');
+
+function tthq_add_custom_fa_css()
+{
+	wp_enqueue_style('custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
+}
