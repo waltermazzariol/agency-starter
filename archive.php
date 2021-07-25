@@ -11,11 +11,12 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-	<header class="container-fluid cover--small mb-5">
-		<div class="container-fluid cover-wrapper">
-			<span class="container item">
-				<h1 class="cover-title animated fadeIn"><?php the_archive_title(); ?></h1>
-			</span>
+<header class="text-center">
+		<img class="cover-image mb-3" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/cover.jpg" />
+		
+		<div class="container">
+			<h1 class="post-title animated fadeIn"><span class="underline"><?php the_archive_title("");?></span></h1>
+		</div>
 		</div>
 	</header>
 	<?php if ( have_posts() ) : ?>

@@ -3,35 +3,39 @@
 // -----------------------------------------------------------------------------
 // https://bootstrapvars.com/4.4/
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans&display=swap');
 
 $red:                         #f05555;
 $gray-100:                    #f7f7f7;
 $gray-200:                    #e4e4e4;
 $gray-900:                    #30302e;
 $beige-100:                   #f0ebe3;
-$primary:                     #121212;
-$secondary:                     $beige-100;
-$success:                       $secondary;
-$info:                          $gray-900;
-$warning:                       $primary;
-$danger:                        $red;
+$brown:                       #54341E;
+$light-brown:                 #B49E90;
+$dark-brown:                  #301D11;
+$primary:                     $brown;
+$secondary:                   $beige-100;
+$success:                     $secondary;
+$info:                        $gray-900;
+$warning:                     $primary;
+$danger:                      $red;
 $black:                       #000000;
-
-
-// Text Colors
-$text-color-1:                  #121212;
-$text-color-a:                  $black;
+              
+// text color
+$text-p:                      #333333;
+$text-color-a:                #282828;
+$text-color-h:                $black;
 
 // Font Family
 // $font-family-playfair:          "Playfair Display", serif;
 // $font-family-heebo:             "Heebo", sans-serif;
 // $font-family-roboto:            "Roboto", sans-serif;
 // $font-family-natosans:          "Nato Sans", sans-serif;
-$font-family-josefin:           "Josefin Sans", sans-serif;
+$font-family-montserrat:           "Montserrat", sans-serif;
+$font-family-opensans:             "Open Sans", sans-serif;
 
 // Font Size
-$font-size-base: 1rem;
+$font-size-base: 0.8rem;
 
 // Font Weight
 $font-weight-lighter:           lighter;
@@ -42,7 +46,7 @@ $font-weight-semibold:          600;
 $font-weight-bold:              700;
 $font-weight-bolder:            800;
 $font-weight-black:             900;
-$font-weight-base:              $font-weight-light;
+$font-weight-base:              $font-weight-normal;
 $line-height-base:              1.5;
 
 // Header
@@ -60,7 +64,7 @@ $h5-line-height:                $font-size-base * 1.5;
 $h6-line-height:                $font-size-base * 1.5;
 
 // Header Touch
-$h1-font-size-touch:            $font-size-base * 2.25;
+$h1-font-size-touch:            $font-size-base * 2;
 $h2-font-size-touch:            $font-size-base * 1.5;
 $h3-font-size-touch:            $font-size-base * 1.0625;
 $h4-font-size-touch:            $font-size-base * 0.875;
@@ -87,17 +91,17 @@ $grid-breakpoints: (
 // Grid containers
 $container-max-widths: (
   sm: 100%,
-  md: 100%,
-  lg: 100%,
+  md: 800px,
+  lg: 900px,
   xl: 1150px,
   xxl: 1310px
 );
 
 // Font overrides
-$font-family-sans-serif: $font-family-josefin;
-$font-family-serif: $font-family-josefin;
+$font-family-sans-serif: $font-family-montserrat;
+$font-family-serif: $font-family-montserrat;
 
-$font-family-base: $font-family-serif !default;
+$font-family-base: $font-family-opensans !default;
 $headings-font-family: $font-family-sans-serif !default;
 
 // Custom variables
@@ -106,7 +110,7 @@ $navbar-height: 60px;
 $text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 $text-shadow-2: 0 1px 2px rgba(0, 0, 0, 0.5);
 
-$navbar-color: $primary;
+$navbar-color: #ffffff;
 $navbar-cta-color: #ffffff;
 $navbar-cta-bg-color: $primary;
 $navbar-text-color: #ffffff;

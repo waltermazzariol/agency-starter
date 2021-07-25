@@ -9,39 +9,36 @@
 
 ?>
 
-<article class="col-md-4 mb-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="card-loop">
-		<div class="box-loop">
+<article class="col-md-4 mb-3" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div data-aos="zoom-in" class="card-loop">
+		<div class="card-loop-wrapper">
 			<?php if(get_the_post_thumbnail_url()){ ?>
-			
-				<img class="box-loop-image" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
-		
+			<img class="card-loop-image" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
 			<?php }else{ ?>
-		
-				<img class="box-loop-image"
-					src="<?php echo get_template_directory_uri() . '/dist/assets/image/preview.jpg'; ?>" alt="" />
-
+				<img class="podcast-card-image"
+                src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/preview.jpeg" alt="" />
 			<?php } ?>
 		</div>
+		<!-- <div class="entry-meta small">
+		<?php $categories = get_the_category();
+        if ( ! empty( $categories ) ) {
+            echo '<div class="card-loop-cat">'.esc_html( $categories[0]->name ).'</div>';
+        }
+			wp_guarapo_posted_on();
+			wp_guarapo_posted_by();
+		?>
+		</div> -->
+		<?php $categories = get_the_category();
+        if ( ! empty( $categories ) ) {
+            echo '<div class="card-loop-cat">'.esc_html( $categories[0]->name ).'</div>';
+        }?>
 		<header class="entry-header">
 			<?php
-			the_title( '<h3 class="entry-title"><a class="text-primary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+			the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
 		 ?>
 		</header><!-- .entry-header -->
-		<?php	if ( 'post' === get_post_type() ) :
-			?>
-		<div class="entry-meta mb-3 small">
-			<?php
-				wp_guarapo_posted_on();
-				wp_guarapo_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-		<div class="entry-content">
-			<?php
-			the_excerpt()
-			?>
-		</div><!-- .entry-content -->
+		
+		<a class="card-loop-button" href="<?php echo get_permalink() ?>">Leer Más</a>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

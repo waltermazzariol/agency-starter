@@ -5,3 +5,19 @@
         margin-bottom: 1rem;
     }
 }
+.footer-area{
+    ul{
+        display: flex;
+        flex-direction: row;
+        padding-left: 0;
+        margin-bottom: 1rem;
+        list-style: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        li a{
+            color: $white;
+            margin-right: 1rem;
+            text-transform: uppercase;
+        }
+    }
+}

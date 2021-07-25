@@ -11,24 +11,14 @@
  */
 
 ?>
-<section class="footer py-5 bg-primary">
+<section class="footer py-5 bg-dark-brown">
 	<div class="container">
-		<div class="row text-white">
-			<div class="col-sm-12 col-md-6">
-				<?php dynamic_sidebar('footer_area_one'); ?>
-			</div>
-
-			<div class="col-sm-12 col-md-2">
+		<div class="row text-white text-center">
+			<div data-aos="fade-up" class="col-sm-12 col-md-12">
 				<?php dynamic_sidebar('footer_area_two'); ?>
 			</div>
 
-			<div class="col-sm-12 col-md-2">
-				<?php dynamic_sidebar('footer_area_three'); ?>
-			</div>
-
-			<div class="col-sm-12 col-md-2">
-				<?php dynamic_sidebar('footer_area_four'); ?>
-			</div>
+			
 		</div>
 	</div>
 </section>

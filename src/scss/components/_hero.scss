@@ -1,11 +1,99 @@
-.hero{
-    &-title{
-        color: $white;
+.hero {
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+    &-wrapper {
+        height: 70vh;
+        align-items: center;
+
+        @include media-breakpoint-down(sm) {
+            justify-content: center;
+            height: 90vh;
+        }
     }
-    &-subtitle{
+
+    &-img {
+        position: relative;
+        width: 100%;
+    }
+
+    &-content {
+        background-color:rgba($primary, 0.9);
+        top: 0;
+        margin: 10px;
+        padding: 35px 25px;
+        max-width: 60%;
+        @include media-breakpoint-down(sm) {
+            flex-wrap: wrap;
+            max-width: 90%;
+        }
+        &-img {
+            margin: auto;
+            margin-right: 1.5rem;
+            @include media-breakpoint-down(sm) {
+                margin: auto;
+                margin-bottom: 1.5rem;
+            }
+            img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                max-width: 200px;
+                min-width: 200px;
+                @include media-breakpoint-down(sm) {
+                    max-width: 100%;
+                }
+            }
+        }
+        &-text{
+            img{
+                max-width: 50px;
+            }
+        }
+    }
+
+    &-title {
+        color: $white;
+        font-size: 1.5rem;
+        line-height: 2rem;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+        }
+        @include media-breakpoint-up(xl) {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    &-subtitle {
         color: $light-brown;
+        font-size: 0.8rem;
+        font-weight: 700;
     }
-    &-listen{
+
+    &-listen {
         color: $white;
+        font-weight: 400;
+        font-size: 0.8rem;
     }
+
+    a {
+        text-decoration: none;
+    }
+
+    .hero-icon:hover {
+        transform: scale(1.1);
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+}
+
+.cover {
+    background-position: center center;
+    min-height: 350px;
+    position: relative;
 }

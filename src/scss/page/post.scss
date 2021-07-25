@@ -1,0 +1,123 @@
+    .post {
+        &-title {
+            margin: 1rem auto 2.5rem;
+        }
+
+        &-meta {
+            color: $primary;
+            margin-top: 1rem;
+        }
+
+        &-next {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            h3 {
+                margin-bottom: 5px;
+            }
+
+            &-title {
+                font-size: 0.9rem;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .entry-header {
+        .post-thumbnail {
+            max-height: 250px;
+            background-size: cover;
+            overflow: hidden;
+            background-position: center;
+            @include media-breakpoint-down(xs) {
+                max-height: 150px;
+            }
+            img {
+                height: auto;
+                width: 100%;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .entry-content {
+        img {
+            height: auto;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        li:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .wp-caption-text {
+        color: $gray-600;
+        font-size: 0.8rem;
+    }
+
+    .cover-image {
+        width: 100%;
+        background-size: cover;
+    }
+
+    .square-image {
+        max-width: 300px;
+        aspect-ratio: 1 / 1;
+        margin-bottom: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -150px;
+
+        img {
+            border-radius: 10px;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+
+    .quote-div h3 {
+        font-size: 2rem;
+        max-width: 600px;
+        line-height: 1.4;
+        position: relative;
+        margin: 1.5rem 0;
+        padding: .5rem;
+    }
+
+    .quote-div h3:before,
+    .quote-div h3:after {
+        position: absolute;
+        color: #f1efe6;
+        font-size: 8rem;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .quote-div h3:before {
+        content: '“';
+        color: $primary;
+        left: -5rem;
+        top: -2rem;
+    }
+
+    .quote-div h3:after {
+        content: '”';
+        color: $primary;
+        right: -5rem;
+        bottom: 1rem;
+    }
+
+    .quote-div h3 cite {
+        line-height: 3;
+        text-align: left;
+    }

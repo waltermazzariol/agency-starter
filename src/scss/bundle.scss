@@ -17,7 +17,7 @@
   './base/typography',
   './base/helpers';
 
-// 5. Components
+// 4. Components
 @import
   './components/navbar',  
   './components/hero',
@@ -25,4 +25,9 @@
   './components/footer', 
   './components/image',
   './components/button',
+  './components/widget',
   './components/input';
+
+  // 5. Page
+@import
+'./page/post';

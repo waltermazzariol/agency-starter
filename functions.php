@@ -140,6 +140,35 @@ function wp_guarapo_widgets_init()
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(array(
+		'name'          => 'Footer area one',
+		'id'            => 'footer_area_one',
+		'description'   => 'This widget area discription',
+		'before_widget' => '<section class="footer-area footer-area-one animated fadeIn">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3><hr>',
+	));
+
+	register_sidebar(array(
+		'name'          => 'Footer area two',
+		'id'            => 'footer_area_two',
+		'description'   => 'This widget area discription',
+		'before_widget' => '<section class="footer-area footer-area-two animated fadeIn">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3><hr>',
+	));
+
+	register_sidebar(array(
+		'name'          => 'Footer area three',
+		'id'            => 'footer_area_three',
+		'description'   => 'This widget area discription',
+		'before_widget' => '<section class="footer-area footer-area-three animated fadeIn">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3><hr>',
+	));
 }
 add_action('widgets_init', 'wp_guarapo_widgets_init');
 
@@ -159,6 +188,16 @@ function wp_guarapo_scripts()
 }
 add_action('wp_enqueue_scripts', 'wp_guarapo_scripts');
 
+/**
+ * Add animate on scroll support
+ */
+
+add_action( 'wp_enqueue_scripts', 'add_aos_animation' );
+ function add_aos_animation() {
+     wp_enqueue_style('AOS_animate', 'https://unpkg.com/aos@2.3.1/dist/aos.css', false, null);
+     wp_enqueue_script('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', false, null, true);
+     wp_enqueue_script('theme-js', get_template_directory_uri() . '/dist/assets/js/theme.js', array( 'AOS' ), null, true);
+ }
 
 /**
  * Enqueue scripts and styles from dist.
@@ -232,6 +271,8 @@ function add_animate_css()
 }
 add_action('wp_enqueue_scripts', 'add_animate_css');
 
+
+
 /** 
  * Delete Category word when printing category page
 */
@@ -263,3 +304,20 @@ function tthq_add_custom_fa_css()
 {
 	wp_enqueue_style('custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
 }
+
+
+// Delete prefix the archive title
+add_filter( 'get_the_archive_title', function ($title) {    
+	if ( is_category() ) {    
+			$title = single_cat_title( '', false );    
+		} elseif ( is_tag() ) {    
+			$title = single_tag_title( '', false );    
+		} elseif ( is_author() ) {    
+			$title = '<span class="vcard">' . get_the_author() . '</span>' ;    
+		} elseif ( is_tax() ) { //for custom post types
+			$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+		} elseif (is_post_type_archive()) {
+			$title = post_type_archive_title( '', false );
+		}
+	return $title;    
+});

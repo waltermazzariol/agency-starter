@@ -1,18 +1,16 @@
-// Base styling for the navbar
 #mainNav {
     background-color: $navbar-color;
     min-height: $navbar-height;
-    @include BoxShadow(2);
+    padding: 0 1rem;
     .navbar {
         &-brand {
-            font-family: $navbar-font-family;
-            font-weight: $font-weight-bold;
+            font-family: $headings-font-family;
             color: $navbar-text-color;
             text-transform: uppercase;
             font-size: 1rem;
-            margin-right: calc(55% - 60px);
+            margin: auto;
             img {
-                max-width: 80px;
+                max-height: 60px;
             }
         }
         &-toggler {
@@ -23,6 +21,18 @@
             }
             &:focus {
                 outline: none;
+            }
+        }
+    }
+    .navbar-nav{
+        text-transform: uppercase;
+        .nav-link{
+            font-family: $headings-font-family;
+            color: $primary;
+            font-weight: 400;
+            font-size: 0.8rem;
+            &:hover{
+                font-weight: 700;
             }
         }
     }

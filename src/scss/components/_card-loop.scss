@@ -5,19 +5,90 @@
     flex-direction: column;
     height: 100%;
     overflow: hidden;
+    margin: 0 20px;
+
+    &-wrapper{
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        margin-bottom: 1rem;
+    }
+    &-image{
+        border-radius: 10px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
     .entry-header, .entry-meta, .entry-content{
         padding: 0 15px;
     }
+    .entry-meta{
+        color: $primary;
+    }
     .entry-title{
-        margin-top: 1.5rem;
+        margin-top: 0.5rem;
+        font-weight: 700;
         &:hover{
             text-decoration: none;
         }
     }
-    .entry-content{
+
+    &-button{
+        font-weight: 400;
+        color: $primary;
+        padding: 0 15px 15px;
         margin-top: auto;
-        a {
-            margin-top: 1rem;
+    }
+    &-cat{
+        color: $primary;
+        padding: 0 15px;
+    }
+}
+
+.podcast-card{
+    padding: 20px;
+    &-wrapper{
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        margin-bottom: 1rem;
+    }
+    &-image{
+        border-radius: 10px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+    .entry-title{ 
+        a{
+        font-weight: 700;
+        color: $text-color-h;
+        &:hover{
+            text-decoration: none;
+        }}
+    }
+    .entry-meta{
+        margin-bottom: 10px;
+    }
+    &-cat{
+        color: $primary;
+        margin-left: 5px;
+    }
+    &-headphone{
+        max-width: 15px;
+        vertical-align: text-top;
+    }
+    &-play{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        max-width: 50px;
+        &:hover{
+            transform: scale(1.1);
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
         }
     }
 }

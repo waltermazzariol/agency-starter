@@ -25,16 +25,9 @@
     height: 100%;
     overflow: hidden;
   }
-  .box-loop {
-    position: relative;
+  
+  .fluid-img{
     width: 100%;
-    padding-top: 56.25%;
-    overflow: hidden;
-      &-image {
-        position: absolute;
-        top: 0;
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-      }
-    }
+    padding-bottom: auto;
+    background-size: cover;
+  }

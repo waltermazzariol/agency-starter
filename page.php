@@ -15,8 +15,11 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main container">
-
+	<main id="primary" class="site-main container-fluid px-0">
+	<header class="entry-header text-center mb-4">
+		<?php wp_guarapo_post_thumbnail(); ?>
+		<?php the_title( '<h1  data-aos="fade-up" class="entry-title my-5"><span class="underline">', '</span></h1>' ); ?>
+	</header><!-- .entry-header -->
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -34,5 +37,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

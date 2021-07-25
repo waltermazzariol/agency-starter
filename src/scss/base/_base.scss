@@ -12,6 +12,7 @@ html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -30,4 +31,49 @@ html * {
 a {
   color: $red;
   text-decoration: none;
+}
+
+.row{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.bg{
+  &-primary{
+    background-color: $primary;
+  }
+  &-light-brown{
+    background-color: $light-brown;
+  }
+  &-dark-brown{
+    background-color: $dark-brown;
+  }
+}
+
+.text{
+  &-primary{
+    color: $primary;
+  }
+  &-big{
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+}
+
+.raya{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.hideme
+{
+    opacity:0;
+}
+
+.underline{
+  background-image: linear-gradient(120deg, #F2E2D8 0%, #F2E2D8 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.4em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
 }
