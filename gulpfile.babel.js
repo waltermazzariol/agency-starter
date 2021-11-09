@@ -8,7 +8,6 @@ import wpPot from "gulp-wp-pot";
 import del from 'del';
 import imagemin from 'gulp-imagemin';
 import yargs from 'yargs';
-import sass from 'gulp-sass';
 import cleanCss from 'gulp-clean-css';
 import gulpif from 'gulp-if';
 import postcss from 'gulp-postcss';
@@ -16,12 +15,13 @@ import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import concat from 'gulp-concat'
 
+const sass = require('gulp-sass')(require('sass'));
 const PRODUCTION = yargs.argv.prod;
 const server = browserSync.create();
 
 export const serve = done => {
   server.init({
-    proxy: "http://localhost/savvy/" // put your local website link here
+    proxy: "http://localhost/ernestocom/" // put your local website link here
   });
   done();
 };
@@ -65,9 +65,6 @@ export const clean = () => del(['dist']);
 
 export const scripts = () => {
   return src([
-      'src/assets/vendor/jquery.js',
-      'src/assets/vendor/popper.js',
-      'src/assets/vendor/bootstrap.js',
       'src/assets/js/*'
     ])
     .pipe(sourcemaps.init())

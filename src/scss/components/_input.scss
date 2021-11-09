@@ -1,19 +1,20 @@
-.form-group{
-    margin: 1rem auto;
+input {
+    overflow: visible;
+    padding: 1rem;
+    background: $white;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    margin-bottom: 1rem;
+    min-width: 250px;
+    &[type="submit"] {
+        min-width: 100px;
+    }
+    &.wpcf7-form-control.wpcf7-text {
+        background-color: $gray-100;
+        max-width: 90%;
+    }
 }
-
-.form-control{
-    outline: none;
-    border-radius: 4px;
-    border: 2px solid $gray-200;
-    height: 3rem;
-    &::placeholder{
-        color: $gray-500;
-        font-size: 0.9rem;
-    }
-
-    &:focus{
-        box-shadow: none;
-        border: 2px solid $black;
-    }
+textarea.wpcf7-form-control.wpcf7-textarea {
+    background-color: $gray-100;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    max-width: 90%;
 }

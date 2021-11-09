@@ -11,9 +11,9 @@
  */
 
 ?>
-<section class="footer py-5 bg-primary">
+<section class="footer py-5">
 	<div class="container">
-		<div class="row text-white">
+		<div class="row">
 			<div class="col-sm-12 col-md-6">
 				<?php dynamic_sidebar('footer_area_one'); ?>
 			</div>

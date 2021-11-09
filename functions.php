@@ -79,7 +79,7 @@ if (!function_exists('wp_guarapo_setup')) :
 			apply_filters(
 				'wp_guarapo_custom_background_args',
 				array(
-					'default-color' => 'ffffff',
+					'default-color' => 'FDFDFD',
 					'default-image' => '',
 				)
 			)
@@ -140,6 +140,50 @@ function wp_guarapo_widgets_init()
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Footer 1', 'wp_guarapo'),
+			'id'            => 'footer_area_one',
+			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Footer 2', 'wp_guarapo'),
+			'id'            => 'footer_area_two',
+			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Footer 3', 'wp_guarapo'),
+			'id'            => 'footer_area_three',
+			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Footer 4', 'wp_guarapo'),
+			'id'            => 'footer_area_four',
+			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action('widgets_init', 'wp_guarapo_widgets_init');
 
@@ -186,8 +230,8 @@ add_filter('show_admin_bar', '__return_false');
 
 /**
  * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+ * require get_template_directory() . '/inc/custom-header.php';
+*/
 
 /**
  * Custom template tags for this theme.
@@ -210,6 +254,22 @@ require get_template_directory() . '/inc/customizer.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// Incluir Bootstrap JS y dependencia popper
+function bootstrap_js() {
+	wp_enqueue_script( 'popper_js', 
+  					'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', 
+  					array(), 
+  					'2.9.2', 
+  					true); 
+	wp_enqueue_script( 'bootstrap_js', 
+  					'https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js', 
+  					array('jquery','popper_js'), 
+  					'5.0.1', 
+  					true); 
+}
+add_action( 'wp_enqueue_scripts', 'bootstrap_js');
+
 
 // Allow SVG
 function add_file_types_to_uploads($file_types)
@@ -263,3 +323,79 @@ function tthq_add_custom_fa_css()
 {
 	wp_enqueue_style('custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
 }
+
+/**
+ * Add Accent color to customize
+ */
+  function theme_customize_register( $wp_customize ) {    
+    // Accent color
+    $wp_customize->add_setting( 'accent_color', array(
+      'default'   => '22577A',
+      'transport' => 'refresh',
+      'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
+      'section' => 'colors',
+      'label'   => esc_html__( 'Accent color', 'theme' ),
+    ) ) );
+  }
+
+  add_action( 'customize_register', 'theme_customize_register' );
+
+  function theme_get_customizer_css() {
+    ob_start();
+
+    $accent_color = get_theme_mod( 'accent_color', '' );
+    if ( ! empty( $accent_color ) ) {
+      ?>
+	  	a:hover{
+			color: <?php echo $accent_color; ?>;
+			text-decoration: underline;
+		}
+		hr{
+			background-color: <?php echo $accent_color; ?>;
+			opacity: 1;
+		}
+		.bg-primary{
+			background-color: <?php echo $accent_color; ?>!important;
+		}
+		.pagination .page-numbers{
+				background-color: <?php echo $accent_color; ?>;
+		}
+	
+      <?php
+    }
+
+    $css = ob_get_clean();
+    return $css;
+  }
+
+/* 
+* Add Leer más button
+*/
+
+  function theme_enqueue_styles() {
+	wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+	$custom_css = theme_get_customizer_css();
+	wp_add_inline_style( 'theme-styles', $custom_css );
+  }
+  
+  add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+  function custom_excerpt_length( $length ) {
+	return 15;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function wpdocs_excerpt_more( $more ) {
+    if ( ! is_single() ) {
+        $more = sprintf( '<a class="read-more d-block" href="%1$s">%2$s</a>',
+            get_permalink( get_the_ID() ),
+            __( 'Leer más', 'textdomain' )
+        );
+    }
+ 
+    return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );

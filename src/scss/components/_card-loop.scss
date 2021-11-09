@@ -1,24 +1,13 @@
 .card-loop{
-    @include BoxShadow(1);
-    border-radius: 4px;
     display: flex;
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    .entry-header, .entry-meta, .entry-content{
-        padding: 0 15px;
+    .entry-meta{
+        margin-top: 0.5rem;
     }
     .entry-title{
-        margin-top: 1.5rem;
-        &:hover{
-            text-decoration: none;
-        }
-    }
-    .entry-content{
-        margin-top: auto;
-        a {
-            margin-top: 1rem;
-        }
+        margin-top: 0.5rem;
     }
 }
 

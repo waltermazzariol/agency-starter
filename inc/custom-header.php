@@ -23,7 +23,7 @@ function wp_guarapo_custom_header_setup() {
 			'wp_guarapo_custom_header_args',
 			array(
 				'default-image'      => '',
-				'default-text-color' => '000000',
+				'default-text-color' => '22577A',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,

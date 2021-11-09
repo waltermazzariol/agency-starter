@@ -1,29 +1,39 @@
 // Base styling for the navbar
 #mainNav {
-    background-color: $navbar-color;
-    min-height: $navbar-height;
-    @include BoxShadow(2);
-    .navbar {
-        &-brand {
-            font-family: $navbar-font-family;
-            font-weight: $font-weight-bold;
-            color: $navbar-text-color;
-            text-transform: uppercase;
-            font-size: 1rem;
-            margin-right: calc(55% - 60px);
-            img {
-                max-width: 80px;
-            }
-        }
-        &-toggler {
-            border-color: transparent;
-            &-icon {
-                // background-image: url("../../../assets/img/menu.svg");
-                max-width: 85%;
-            }
-            &:focus {
-                outline: none;
-            }
-        }
+  background-color: $navbar-color;
+  min-height: $navbar-height;
+  @include BoxShadow(2);
+  .navbar {
+    &-brand {
+      font-family: $navbar-font-family;
+      font-weight: $font-weight-bold;
+      color: $navbar-text-color;
+      text-transform: uppercase;
+      font-size: 1rem;
+      img {
+        max-width: 80px;
+      }
     }
+    // &-toggler {
+    //   &-icon {
+    //     // background-image: url("../../../assets/img/menu.svg");
+    //     max-width: 85%;
+        
+    //   }
+    //   &:focus {
+    //     outline: none;
+    //   }
+    // }
+  }
+}
+.nav {
+  &-link {
+    font-family: $navbar-font-family;
+    color: $navbar-text-color;
+    text-transform: uppercase;
+    margin-left: 1.2rem;
+    &:hover{
+        color: $navbar-text-color-hover;
+    }
+  }
 }

@@ -23,25 +23,22 @@
 
 			<?php } ?>
 		</div>
-		<header class="entry-header">
-			<?php
-			the_title( '<h3 class="entry-title"><a class="text-primary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
-		 ?>
-		</header><!-- .entry-header -->
-		<?php	if ( 'post' === get_post_type() ) :
-			?>
-		<div class="entry-meta mb-3 small">
+		<div class="entry-meta mb-2 small">
 			<?php
 				wp_guarapo_posted_on();
 				wp_guarapo_posted_by();
 			?>
 		</div><!-- .entry-meta -->
-		<?php endif; ?>
-		<div class="entry-content">
+		<header class="entry-header">
 			<?php
-			the_excerpt()
+			the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
+		 ?>
+		</header><!-- .entry-header -->
+		<?php	if ( 'post' === get_post_type() ) :
 			?>
-		</div><!-- .entry-content -->
+		
+		<?php endif; ?>
+		
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

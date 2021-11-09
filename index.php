@@ -15,15 +15,22 @@
 get_header();
 ?>
 
-<main id="primary" class="container site-main">
+<main id="primary" class="container-fluid px-0 site-main">
 
 	<?php if ( have_posts() ) :	
 		if ( is_home() && ! is_front_page() ) :
 				?>
+	<header class="entry-header cover-page mb-5">
+		<?php  $img = wp_get_attachment_image_src(get_post_thumbnail_id(get_option('page_for_posts')),'full'); 
+		$featured_image = $img[0];  ?>
+		 <?php if($featured_image): ?><img src="<?php echo $featured_image; ?>" /> <?php endif ?>
+		<div class="hover"></div>
+		<h1 class="entry-title"><?php single_post_title(); ?></h1>
+	</header><!-- .entry-header -->
+	
 	<header>
-		<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 	</header>
-	<div class="container mt-4">
+	<div class="container mt-5">
 			<?php
 			endif; ?>
 		<div class="row">

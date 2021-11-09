@@ -11,10 +11,10 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-	<header class="container-fluid cover--small mb-5">
-		<div class="container-fluid cover-wrapper">
+	<header class="container-fluid mb-5">
+		<div class="container-fluid ">
 			<span class="container item">
-				<h1 class="cover-title animated fadeIn"><?php the_archive_title(); ?></h1>
+				<h1><?php the_archive_title(); ?></h1>
 			</span>
 		</div>
 	</header>

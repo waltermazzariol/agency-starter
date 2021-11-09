@@ -10,11 +10,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mb-3'); ?>>
-	<header class="container-fluid cover--small mb-5">
-		<div class="container-fluid cover-wrapper">
-			<span class="container item">
-				<h1 class="cover-title animated fadeIn text-center"><?php the_title(); ?></h1>
-			</span>
+	<header class="container-fluid my-5">
+		<div class="container cover">
+				<h1 class="cover-title"><?php the_title(); ?></h1>
 		</div>
 	</header>
 	
