@@ -21,7 +21,7 @@ const server = browserSync.create();
 
 export const serve = done => {
   server.init({
-    proxy: "http://localhost/ernestocom/" // put your local website link here
+    proxy: "http://localhost/ernestonet/" // put your local website link here
   });
   done();
 };

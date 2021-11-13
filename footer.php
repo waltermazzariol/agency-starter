@@ -14,26 +14,26 @@
 <section class="footer py-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 col-md-6">
+			<div class="col-sm-12 col-md-3">
 				<?php dynamic_sidebar('footer_area_one'); ?>
 			</div>
 
-			<div class="col-sm-12 col-md-2">
+			<div class="col-sm-12 col-md-3">
 				<?php dynamic_sidebar('footer_area_two'); ?>
 			</div>
 
-			<div class="col-sm-12 col-md-2">
+			<div class="col-sm-12 col-md-3">
 				<?php dynamic_sidebar('footer_area_three'); ?>
 			</div>
 
-			<div class="col-sm-12 col-md-2">
+			<div class="col-sm-12 col-md-3">
 				<?php dynamic_sidebar('footer_area_four'); ?>
 			</div>
 		</div>
 	</div>
 </section>
 
-<footer id="colophon" class="site-footer container-fluid bg-primary">
+<footer id="colophon" class="site-footer container-fluid">
 	<div class="site-info text-center">
 		<a href="https://guarapomedia.com/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/guarapo_logo.svg" /></a>
 	</div><!-- .site-info -->

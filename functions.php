@@ -335,10 +335,32 @@ function tthq_add_custom_fa_css()
       'sanitize_callback' => 'sanitize_hex_color',
     ) );
 
+	$wp_customize->add_setting( 'footer_color', array(
+		'default'   => 'DDDDDD',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
+	  ) );
+
+	$wp_customize->add_setting( 'footer_text_color', array(
+		'default'   => '000000',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
+	  ) );
+
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
       'section' => 'colors',
       'label'   => esc_html__( 'Accent color', 'theme' ),
     ) ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_color', array(
+		'section' => 'colors',
+		'label'   => esc_html__( 'Footer color', 'theme' ),
+	  ) ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_text_color', array(
+		'section' => 'colors',
+		'label'   => esc_html__( 'Footer text color', 'theme' ),
+	  ) ) );
   }
 
   add_action( 'customize_register', 'theme_customize_register' );
@@ -364,6 +386,21 @@ function tthq_add_custom_fa_css()
 				background-color: <?php echo $accent_color; ?>;
 		}
 	
+      <?php
+    }
+
+	$footer_color = get_theme_mod( 'footer_color', '' );
+	$footer_text_color = get_theme_mod( 'footer_text_color', '' );
+
+    if ( ! empty( $footer_color ) ) {
+      ?>
+	  	.footer{
+			background-color: <?php echo $footer_color; ?>;
+			color: <?php echo $footer_text_color; ?>;
+		}
+		h4{
+			color: <?php echo $footer_text_color; ?>;
+		}
       <?php
     }
 
