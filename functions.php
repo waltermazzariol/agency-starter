@@ -398,7 +398,7 @@ function tthq_add_custom_fa_css()
 			background-color: <?php echo $footer_color; ?>;
 			color: <?php echo $footer_text_color; ?>;
 		}
-		h4{
+		.widget h4{
 			color: <?php echo $footer_text_color; ?>;
 		}
       <?php
