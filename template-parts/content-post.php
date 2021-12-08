@@ -11,20 +11,28 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mb-3'); ?>>
 	<header class="container-fluid my-5">
-		<div class="container cover">
+		<div class="container cover text-center">
 				<h1 class="cover-title"><?php the_title(); ?></h1>
+				<?php	if ( 'post' === get_post_type() ) :
+			?>
+		<div class="entry-meta mb-3 small">
+			<?php
+				wp_guarapo_posted_on();
+				wp_guarapo_posted_by();
+			?>
+		</div><!-- .entry-meta -->
+		<?php endif; ?>
+		
 		</div>
 	</header>
 	
-	<div class="container entry-content">
-		<div class="row">
+	<div class="container entry-content ">
+		<div class="row justify-content-md-center">
 			<div class="col-md-8">
-		<?php
-		the_content(); ?>
-</div>
-<div class="col-md-4">
-	<?php get_sidebar(); ?>
-</div>	
+			<?php my_share_buttons(); ?>
+		<?php the_content(); ?>
+	</div>
+	
 <?php
 		the_posts_pagination();
 				?>

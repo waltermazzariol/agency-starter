@@ -436,3 +436,14 @@ function wpdocs_excerpt_more( $more ) {
     return $more;
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+/**
+ * Fantastic social media share buttons by www.jonakyblog.com
+ */
+function my_share_buttons() {
+    $url = urlencode(get_the_permalink()); /* Getting the current post link */
+    $title = urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); /* Get the post title */
+    $media = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full')); /* Get the current post image thumbnail */
+
+    include( locate_template('share-buttons-template.php', false, false) );
+}
