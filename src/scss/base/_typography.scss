@@ -14,11 +14,9 @@
 // }
 
 body {
-  font-size: 0.875rem;
+  font-size: $font-size-base;
   font-weight: $font-weight-normal;
   font-family: $font-family-base;
-  letter-spacing: 0.4px;
-  line-height: 1.5rem;
   color: $body-color;
 
   @include media-breakpoint-up(lg) {
@@ -51,9 +49,9 @@ ul,
 p,
 blockquote,
 .preamble {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   @include media-breakpoint-up(lg) {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -87,7 +85,6 @@ h1,
   font-size: $h1-font-size-touch;
   font-weight: $font-weight-bold;
   line-height: $h1-line-height-touch;
-  letter-spacing: 0.13px;
   text-transform: uppercase;
 
   @include media-breakpoint-up(lg) {
@@ -102,13 +99,10 @@ h2,
   color: $text-color-1;
   font-size: $h2-font-size-touch;
   font-weight: $font-weight-normal;
-  letter-spacing: 0.08px;
   line-height: $h2-line-height-touch;
   text-transform: initial;
-
   @include media-breakpoint-up(lg) {
     @include font-size($h2-font-size);
-    letter-spacing: 0.14px;
     line-height: $h2-line-height;
   }
 }

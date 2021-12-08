@@ -33,7 +33,7 @@ $font-family-roboto:            "Roboto", sans-serif;
 $font-family-opensans:           "Open Sans", sans-serif;
 
 // Font Size
-$font-size-base: 1rem;
+$font-size-base: 1.2rem;
 
 // Font Weight
 $font-weight-lighter:           lighter;
@@ -48,13 +48,13 @@ $font-weight-base:              $font-weight-normal;
 $line-height-base:              1.5;
 
 // Header
-$h1-font-size:                  $font-size-base * 3;
-$h2-font-size:                  $font-size-base * 2.4375;
+$h1-font-size:                  $font-size-base * 2.3;
+$h2-font-size:                  $font-size-base * 1.8;
 $h3-font-size:                  $font-size-base * 1.5;
 $h4-font-size:                  $font-size-base * 1.2;
 $h5-font-size:                  $font-size-base * 0.75;
 $h6-font-size:                  $font-size-base * 0.6875;
-$h1-line-height:                $font-size-base * 3.5;
+$h1-line-height:                $font-size-base * 3;
 $h2-line-height:                $font-size-base * 3;
 $h3-line-height:                $font-size-base * 2.25;
 $h4-line-height:                $font-size-base * 1.5;
@@ -62,8 +62,8 @@ $h5-line-height:                $font-size-base * 1.5;
 $h6-line-height:                $font-size-base * 1.5;
 
 // Header Touch
-$h1-font-size-touch:            $font-size-base * 2.5;
-$h2-font-size-touch:            $font-size-base * 2;
+$h1-font-size-touch:            $font-size-base * 2.3;
+$h2-font-size-touch:            $font-size-base * 1.8;
 $h3-font-size-touch:            $font-size-base * 1.5;
 $h4-font-size-touch:            $font-size-base * 0.875;
 $h5-font-size-touch:            $font-size-base * 0.75;
@@ -96,22 +96,22 @@ $container-max-widths: (
 );
 
 // Font overrides
-$font-family-base: $font-family-opensans ;
-$headings-font-family: $font-family-opensans;
+$font-family-base: $font-family-roboto ;
+$headings-font-family: $font-family-roboto;
 
-// Custom variables
+// Navbar
 $navbar-height: 60px;
 
-$text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-$text-shadow-2: 0 1px 2px rgba(0, 0, 0, 0.5);
-
-$navbar-color: $white;
+$navbar-color: inherit;
 $navbar-cta-color: $text-color-1;
 $navbar-cta-bg-color: $primary;
 $navbar-text-color: $black;
 $navbar-text-color-hover: darken($navbar-text-color , 20);
 $navbar-font-family: $headings-font-family;
 
-
 $navbar-togle-collapse: $primary;
 $navbar-togle-collapse-line: #ddd;
+
+//Shadows
+$text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+$text-shadow-2: 0 1px 2px rgba(0, 0, 0, 0.5);

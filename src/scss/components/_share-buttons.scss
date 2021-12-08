@@ -7,7 +7,7 @@
     padding: 0;
     display: flex;
     flex-flow: row wrap;
-    justify-content: end;
+    justify-content: center;
     align-content: flex-start;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .share-buttons a i{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .share-buttons a:hover {

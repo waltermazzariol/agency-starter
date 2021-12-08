@@ -10,37 +10,47 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mb-3'); ?>>
-	<header class="container-fluid my-5">
-		<div class="container cover text-center">
-				<h1 class="cover-title"><?php the_title(); ?></h1>
-				<?php	if ( 'post' === get_post_type() ) :
-			?>
-		<div class="entry-meta mb-3 small">
-			<?php
-				wp_guarapo_posted_on();
-				wp_guarapo_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-		
-		</div>
-	</header>
-	
-	<div class="container entry-content ">
-		<div class="row justify-content-md-center">
-			<div class="col-md-8">
-			<?php my_share_buttons(); ?>
-		<?php the_content(); ?>
-	</div>
-	
-<?php
-		the_posts_pagination();
-				?>
-	</div><!-- .entry-content -->
+    <header class="container-fluid my-5">
+        <div class="container cover text-center">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8">
+                    <h1 class="cover-title"><?php the_title(); ?></h1>
+                    <?php	if ( 'post' === get_post_type() ) :
+					?>
+                    <div class="entry-meta mb-3 small">
+                        <?php
+							wp_guarapo_posted_on();
+							wp_guarapo_posted_by();
+						?>
+                    </div><!-- .entry-meta -->
+                    <?php endif; ?>
+                    <div class="mt-3">
+                        <?php my_share_buttons(); ?>
+                    </div>
+					<hr class="center">
+                </div>
+            </div>
+        </div>
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
+    </header>
+
+    <div class="container entry-content ">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <?php the_content(); ?>
+                <div class="mt-5 text-center">
+                    <hr class="center">
+                    <small> Share this story</small>
+                    <?php my_share_buttons(); ?>
+                </div>
+            </div>
+
+            <?php the_posts_pagination(); ?>
+        </div><!-- .entry-content -->
+
+        <?php if ( get_edit_post_link() ) : ?>
+        <footer class="entry-footer">
+            <?php
 			edit_post_link(
 				sprintf(
 					wp_kses(
@@ -58,6 +68,6 @@
 				'</span>'
 			);
 			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+        </footer><!-- .entry-footer -->
+        <?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
