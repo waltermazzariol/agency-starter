@@ -54,7 +54,7 @@ get_header();
                     </div>
                 </div>
                 <div class="col-12 mt-5 text-center animated fadeIn"><a class="btn btn-basic"
-                        href="<?php print_r($button['url']); ?>"><?php print_r($button['texto']); ?></a></div>
+                        href="<?php print_r($section_1['url_boton']); ?>"><?php print_r($section_1['texto_boton']); ?></a></div>
             </div>
         </div>
     </div>
@@ -82,8 +82,8 @@ if ($section_2) :
                         </div>
                         <?php endforeach; endif; ?>
                         <div class="col-12 mt-5 text-center mb-3">
-                            <a class="btn btn-basic" href="<?php print_r($button['url']); ?>">
-                                <?php print_r($button['texto']); ?></a>
+                            <a class="btn btn-basic" href="<?php print_r($section_2['url_boton']); ?>">
+                                <?php print_r($section_2['texto_boton']); ?></a>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@ if ($section_2) :
                         </div>
                         <?php endforeach; endif; ?>
                         <div class="col-12 mt-5 text-center animated fadeIn"><a class="btn btn-basic"
-                                href="<?php print_r($button['url']); ?>"><?php print_r($button['texto']); ?></a></div>
+                                href="<?php print_r($section_3['url_boton']); ?>"><?php print_r($section_3['texto_boton']); ?></a></div>
                     </div>
                 </div>
 
@@ -149,7 +149,7 @@ if ($section_4) :
                         </div>
                         <?php endforeach; endif; ?>
                         <div class="col-12 mt-5 text-center mb-4 animated fadeIn"><a class="btn btn-basic"
-                                href="<?php print_r($button['url']); ?>"><?php print_r($button['texto']); ?></a></div>
+                                href="<?php print_r($section_4['url_boton']); ?>"><?php print_r($section_4['texto_boton']); ?></a></div>
                     </div>
                 </div>
             </div>
@@ -186,7 +186,7 @@ if ($section_5) :
                         </div>
                         <?php endforeach; endif; ?>
                         <div class="col-12 mt-5 text-center animated fadeIn"><a class="btn btn-basic"
-                                href="<?php print_r($button['url']); ?>"><?php print_r($button['texto']); ?></a></div>
+                                href="<?php print_r($section_5['url_boton']); ?>"><?php print_r($section_5['texto_boton']); ?></a></div>
                     </div>
                 </div>
             </div>
