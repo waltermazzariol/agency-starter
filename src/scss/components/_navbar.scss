@@ -2,11 +2,9 @@
 #mainNav {
   background-color: $navbar-color;
   min-height: $navbar-height;
-  @include BoxShadow(2);
   .navbar {
     &-brand {
       font-family: $navbar-font-family;
-      font-weight: $font-weight-bold;
       color: $navbar-text-color;
       text-transform: uppercase;
       font-size: 1rem;
@@ -43,7 +41,7 @@
 .nav {
   &-link {
     font-family: $navbar-font-family;
-    color: $navbar-text-color;
+    color: $navbar-text-color!important;
     text-transform: uppercase;
     margin-left: 1.2rem;
     &:hover {

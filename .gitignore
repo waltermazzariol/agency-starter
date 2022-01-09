@@ -49,3 +49,4 @@ package-lock.json
 ### Custom Files ###
 dist/
 bundled/
+.env.json

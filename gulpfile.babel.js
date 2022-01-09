@@ -13,7 +13,9 @@ import gulpif from 'gulp-if';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
-import concat from 'gulp-concat'
+import concat from 'gulp-concat';
+var env = require('gulp-env');
+env({file: ".env.json"});
 
 const sass = require('gulp-sass')(require('sass'));
 const PRODUCTION = yargs.argv.prod;
@@ -21,7 +23,7 @@ const server = browserSync.create();
 
 export const serve = done => {
   server.init({
-    proxy: "http://localhost/ernestonet/" // put your local website link here
+    proxy: process.env.SERVERURI // put your local website link here
   });
   done();
 };
