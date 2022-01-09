@@ -27,9 +27,8 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
 		<header class="site-header">
-			<div class="bg-secondary d-none d-sm-block"><div class="pre-navbar container"><?php dynamic_sidebar('pre-navbar'); ?></div></div>
 			<nav class="navbar navbar-expand-md navbar-light" id="mainNav">
-				<div class="container">
+				<div class="container justify-content-start">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
      					 <span class="navbar-toggler-icon"></span>
