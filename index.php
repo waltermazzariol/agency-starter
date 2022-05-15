@@ -15,26 +15,19 @@
 get_header();
 ?>
 
-<main id="primary" class="container-fluid px-0 site-main">
+<main id="primary" class="container px-0 site-main">
 
 	<?php if ( have_posts() ) :	
 		if ( is_home() && ! is_front_page() ) :
 				?>
-	<header class="entry-header cover-page mb-5">
-		<?php  $img = wp_get_attachment_image_src(get_post_thumbnail_id(get_option('page_for_posts')),'full'); 
-		$featured_image = $img[0];  ?>
-		 <?php if($featured_image): ?><img src="<?php echo $featured_image; ?>" /> <?php endif ?>
-		<div class="hover"></div>
+	<header class="entry-header cover-page mt-5">
 		<h1 class="entry-title"><?php single_post_title(); ?></h1>
 	</header><!-- .entry-header -->
 	
-	<header>
-	</header>
+	<?php endif; ?>
 	<div class="container mt-5">
-			<?php
-			endif; ?>
 		<div class="row">
-<?php
+			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -47,22 +40,18 @@ get_header();
 				get_template_part( 'template-parts/content', 'loop' );
 
 			endwhile;
-			?> </div>
-	</div> <?php
+			?> 
+		</div>
+	</div> 
+		<?php
 		 the_posts_pagination(array(
-
 			'prev_text' => '<span>Anterior</span>',
 			'next_text' => '<span>Siguiente</span>'
-		  
 		  )); 
-
 		else :
-
 			get_template_part( 'template-parts/content', 'none' );
-
 		endif;
 		?>
-
 </main><!-- #main -->
 
 <?php

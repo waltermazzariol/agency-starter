@@ -26,7 +26,7 @@
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
-		<header class="site-header">
+		<header class="container site-header">
 			<nav class="navbar navbar-expand-md navbar-light" id="mainNav">
 				<div class="container justify-content-start">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -50,13 +50,18 @@
 						'theme_location'    => 'menu-1',
 						'depth'             => 2,
 						'container'         => 'div',
-						'container_class'   => 'collapse navbar-collapse justify-content-end',
+						'container_class'   => 'collapse navbar-collapse justify-content-start',
 						'container_id'      => 'navbarScroll',
 						'menu_class'        => 'nav navbar-nav',
 						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 						'walker'            => new WP_Bootstrap_Navwalker(),
 					));
 					?>
+					<span class="d-none d-md-block">
+					<?php dynamic_sidebar('header_area_icons'); ?>
+				</span>
+				
 				</div>
 			</nav>
+			<hr/>
 		</header><!-- #masthead -->

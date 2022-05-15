@@ -14,11 +14,6 @@
         </a>
     </li>
     <li>
-        <a class="share-pinterest" href="//pinterest.com/pin/create/%20button?url=<?php echo urlencode(get_permalink($post->ID)); ?>&description=<?php the_title(); ?>" target="_blank" title="Pin it">
-        <i class="fab fa-pinterest"></i>
-        </a>
-    </li>
-    <li>
         <a class="share-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&source=Jonaky_Blog" title="Share on Linkedin" target="_blank">
         <i class="fab fa-linkedin"></i>
         </a>

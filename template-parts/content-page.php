@@ -11,12 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>">
 	<?php if(!is_front_page()): ?>
-	<header class="entry-header cover-page mb-5">
-		<?php  $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
-		 <?php if($featured_img_url): ?><img src="<?php echo $featured_img_url; ?>" /> <?php endif ?>
-		<div class="hover"></div>
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+		<header class="container mt-5">
+		<div class="d-flex justify-content-center">
+				<h1 ><?php echo get_the_title(); ?></h1>
+		</div>
+	</header>
 	<?php endif; ?>
 
 	<div class="entry-content">

@@ -11,11 +11,9 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-	<header class="container-fluid mb-5">
-		<div class="container-fluid ">
-			<span class="container item">
-				<h1><?php the_archive_title(); ?></h1>
-			</span>
+	<header class="container mt-5">
+		<div class="d-flex justify-content-center">
+				<h1 ><?php the_archive_title(); ?></h1>
 		</div>
 	</header>
 	<?php if ( have_posts() ) : ?>

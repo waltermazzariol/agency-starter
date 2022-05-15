@@ -131,17 +131,6 @@ function wp_guarapo_widgets_init()
 {
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Sidebar', 'wp_guarapo'),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-	register_sidebar(
-		array(
 			'name'          => esc_html__('Footer 1', 'wp_guarapo'),
 			'id'            => 'footer_area_one',
 			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
@@ -153,35 +142,13 @@ function wp_guarapo_widgets_init()
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Footer 2', 'wp_guarapo'),
-			'id'            => 'footer_area_two',
+			'name'          => esc_html__('Header 1', 'wp_guarapo'),
+			'id'            => 'header_area_icons',
 			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer 3', 'wp_guarapo'),
-			'id'            => 'footer_area_three',
-			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer 4', 'wp_guarapo'),
-			'id'            => 'footer_area_four',
-			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<span id="%1$s" class="text-gray d-flex justify-content-end">',
+			'after_widget'  => '</span>',
+			'before_title'  => '',
+			'after_title'   => '',
 		)
 	);
 }
@@ -295,8 +262,6 @@ add_action('wp_enqueue_scripts', 'add_animate_css');
 /** 
  * Delete Category word when printing category page
 */
-
-
 function my_theme_archive_title( $title ) {
     if ( is_category() ) {
         $title = single_cat_title( '', false );
@@ -312,6 +277,9 @@ function my_theme_archive_title( $title ) {
   
     return $title;
 }
+
+add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
+
 
 /**
  * Add font awesome support
@@ -374,10 +342,6 @@ function tthq_add_custom_fa_css()
 	  	a:hover{
 			color: <?php echo $accent_color; ?>;
 			text-decoration: underline;
-		}
-		hr{
-			background-color: <?php echo $accent_color; ?>;
-			opacity: 1;
 		}
 		.bg-primary{
 			background-color: <?php echo $accent_color; ?>!important;
@@ -446,4 +410,139 @@ function my_share_buttons() {
     $media = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full')); /* Get the current post image thumbnail */
 
     include( locate_template('share-buttons-template.php', false, false) );
+}
+
+// Get first image of the post
+function catch_that_image() {
+	global $post, $posts;
+	$first_img = '';
+	ob_start();
+	ob_end_clean();
+	$output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
+	$first_img = (isset($matches[1][0]) ? $matches[1][0] :"");
+  
+	if(empty($first_img)) {
+	  $first_img = get_template_directory_uri() . '/dist/assets/images/default_image.jpeg';
+	}
+	return $first_img;
+  }
+
+  //estimated reading time
+function reading_time() {
+	global $post;
+	$content = get_post_field( 'post_content', $post->ID );
+	$word_count = str_word_count( strip_tags( $content ) );
+	$readingtime = ceil($word_count / 200);
+	
+	if ($readingtime == 1) {
+	$timer = " min";
+	} else {
+	$timer = " min";
+	}
+	$totalreadingtime = $readingtime . $timer;
+	
+	return $totalreadingtime;
+	}
+
+// recent posts shortcode
+function guarapo_recent_posts_shortcode($atts, $content = null) {
+	
+	global $post;
+	
+	extract(shortcode_atts(array(
+		'cat'     => '',
+		'num'     => '6',
+		'order'   => 'DESC',
+		'orderby' => 'post_date',
+		'square'  => 'false',
+		'metadata'=> 'true',
+		'col'     => '3'
+	), $atts));
+	
+	$args = array(
+		'cat'            => $cat,
+		'posts_per_page' => $num,
+		'order'          => $order,
+		'orderby'        => $orderby,
+     	'square'    	 => $square,
+		'metadata'       => $metadata,
+		'col'			=> $col
+	);
+	
+	$output = '';
+	
+	$posts = get_posts($args);
+	
+	foreach($posts as $post) {
+		
+		setup_postdata($post);
+		$date_post = get_the_date();
+		$author_post = get_the_author();
+		$feature_post = ((get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() :  catch_that_image());
+		$feature_aspect = (($square == "true") ? "-square" : "");
+		$meta = (($metadata == "true") ? '<div class="entry-meta mb-2 small">
+					<span class="byline">' . $author_post. '</span>
+		 			<span class="posted-on">' . $date_post . '</span>
+					<span class="reading-time">' . reading_time() . '</span>
+				</div>' : "");
+		$output .='<article class="col-md-'.$col.' mb-3" id="post">
+						<div class="card-loop">
+							<div class="box-loop' . $feature_aspect . '">
+								<a href="'. get_the_permalink().'" class="box-loop-image">
+								<img class="box-loop-image"
+								src="' . $feature_post . '" alt="'.get_the_title().'" />
+								</a>
+							 </div>
+							 <header class="entry-header">
+							 	<h3 class="entry-title">
+							 		<a href="' . get_the_permalink().'" rel="bookmark">'. get_the_title(). '</a>
+								</h3>'. $meta .'
+							</header>
+						</div>
+					</article>';	
+	}
+	
+	wp_reset_postdata();
+	
+	return '<div class="row">
+						'. $output . '
+				
+				<div class="d-flex justify-content-center">
+					<a class="btn-basic" href=' . get_category_link( $cat ) . '>Ver más</a>
+				</div>
+			</div>';
+	
+}
+add_shortcode('recent_posts', 'guarapo_recent_posts_shortcode');
+
+// Responsive for youtube video
+add_theme_support( 'responsive-embeds' );
+
+// Create Shortcode related_posts_
+// Shortcode: [related_posts_ number="5"]
+function create_relatedposts_shortcode() {
+
+	
+
+	// Custom WP query relatedposts
+	$args_relatedposts = array(
+		'posts_per_page' => '3',
+		'order' => 'DESC',
+	);
+
+	$relatedposts = new WP_Query( $args_relatedposts );
+
+	if ( $relatedposts->have_posts() ) {
+		echo '<div class="container mt-5"><div class="row"><hr><h3 class="mt-5 mb-4">Artículos Relacionados</h3>';
+		while ( $relatedposts->have_posts() ) {
+			$relatedposts->the_post();
+			get_template_part( 'template-parts/content', 'loop' );
+		}
+		echo '</div></div>';
+	} else {
+		// not found post 
+	}
+
+	wp_reset_postdata();
+
 }

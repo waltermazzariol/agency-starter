@@ -1,9 +1,12 @@
+.wp-block-search__inside-wrapper{
+    border: 1px solid $gray!important;
+    border-radius: 0.25rem!important;
+} 
+
 input {
     overflow: visible;
     padding: 1rem;
     background: $white;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    margin-bottom: 1rem;
     min-width: 250px;
     &[type="submit"] {
         min-width: 100px;

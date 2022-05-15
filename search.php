@@ -11,18 +11,16 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+	<header class="container mt-5">
+		<div class="d-flex justify-content-center">
+		<h1><?php
+				printf( esc_html__( 'Resultados para: %s', 'wp_guarapo' ), '' . get_search_query() . '' );
+				 ?></h1>
+		</div>
+	</header>
 		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'wp_guarapo' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
+			<div class="container py-5">
+		<div class="row">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -33,12 +31,16 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/content', 'loop' );
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_pagination(array(
 
+				'prev_text' => '<span>Anterior</span>',
+				'next_text' => '<span>Siguiente</span>'
+			  
+			  ));
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -49,5 +51,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -10,17 +10,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mb-3'); ?>>
-    <header class="container-fluid my-5">
-        <div class="container cover text-center">
-            <div class="row justify-content-md-center">
+    <header class="container card-loop">
+            <div class="row justify-content-md-center ">
                 <div class="col-md-8">
-                    <h1 class="cover-title"><?php the_title(); ?></h1>
+                    <h1 class="cover-title text-center"><?php the_title(); ?></h1>
                     <?php	if ( 'post' === get_post_type() ) :
 					?>
-                    <div class="entry-meta mb-3 small">
+                    <div class="entry-meta mb-3 small text-center">
                         <?php
 							wp_guarapo_posted_on();
 							wp_guarapo_posted_by();
+                            echo '<span class="reading-time">' . reading_time() . '</span>';
 						?>
                     </div><!-- .entry-meta -->
                     <?php endif; ?>
@@ -30,17 +30,18 @@
 					<hr class="center">
                 </div>
             </div>
-        </div>
-
     </header>
 
     <div class="container entry-content ">
         <div class="row justify-content-md-center">
             <div class="col-md-8">
                 <?php the_content(); ?>
-                <div class="mt-5 text-center">
+                <div>
+                <?php create_relatedposts_shortcode() ?>
+                    </div>
+                <div class="mt-3 text-center">
                     <hr class="center">
-                    <small> Share this story</small>
+                    <small> Comparte esta historia</small></br>
                     <?php my_share_buttons(); ?>
                 </div>
             </div>

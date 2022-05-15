@@ -2,50 +2,53 @@
 #mainNav {
   background-color: $navbar-color;
   min-height: $navbar-height;
-  .navbar {
-    &-brand {
-      font-family: $navbar-font-family;
-      color: $navbar-text-color;
-      text-transform: uppercase;
-      font-size: 1rem;
-      img {
-        width: 80px;
-        height: auto;
-        image-rendering: auto;
-        image-rendering: crisp-edges;
-        image-rendering: pixelated;
+}
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 0;
+  &-brand {
+    font-family: $navbar-font-family;
+    color: $navbar-text-color;
+  
+    img {
+      width: auto;
+      height: 65px;
+      image-rendering: auto;
+      image-rendering: crisp-edges;
+      image-rendering: pixelated;
 
-        /* Safari seems to support, but seems deprecated and does the same thing as the others. */
-        image-rendering: -webkit-optimize-contrast;
-        @include media-breakpoint-down(md) {
-          width: 50px;
-          height: auto;
-        }
+      /* Safari seems to support, but seems deprecated and does the same thing as the others. */
+      image-rendering: -webkit-optimize-contrast;
+      @include media-breakpoint-down(md) {
+        width: auto;
+        height: 50px;
       }
     }
-    &-toggler {
-      margin-right: 0.6rem;
-      border-color: transparent;
+  }
+  &-toggler {
+    margin-right: 0.6rem;
+    border-color: transparent;
     //   &-icon {
     //     // background-image: url("../../../assets/img/menu.svg");
     //     max-width: 85%;
 
-      // }
-      &:focus {
-        outline: none;
-        box-shadow: none;
-      }
+    // }
+    &:focus {
+      outline: none;
+      box-shadow: none;
     }
   }
 }
+
 .nav {
   &-link {
     font-family: $navbar-font-family;
-    color: $navbar-text-color!important;
-    text-transform: uppercase;
+    color: $navbar-text-color !important;
     margin-left: 1.2rem;
     &:hover {
-      color: $navbar-text-color-hover;
+      color: $navbar-text-color-hover !important;
+      transition: 0.2s;
+      text-decoration: none;
     }
   }
 }

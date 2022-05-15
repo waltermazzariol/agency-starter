@@ -13,21 +13,9 @@
 ?>
 <section class="footer py-5">
 	<div class="container">
-		<div class="row">
+		<div class="row justify-content-center">
 			<div class="col-sm-12 col-md-3">
 				<?php dynamic_sidebar('footer_area_one'); ?>
-			</div>
-
-			<div class="col-sm-12 col-md-3">
-				<?php dynamic_sidebar('footer_area_two'); ?>
-			</div>
-
-			<div class="col-sm-12 col-md-3">
-				<?php dynamic_sidebar('footer_area_three'); ?>
-			</div>
-
-			<div class="col-sm-12 col-md-3">
-				<?php dynamic_sidebar('footer_area_four'); ?>
 			</div>
 		</div>
 	</div>

@@ -30,9 +30,21 @@
  a {
   color: inherit;
   text-decoration: none;
+  &:hover{
+    text-decoration: none!important;
+}
 }
 
 hr.center{
   margin-left: auto;
   margin-right: auto;
+}
+
+hr{
+  color: $gray;
+  width: 100%;
+}
+
+.ml-2{
+  margin-left: 2rem;
 }
