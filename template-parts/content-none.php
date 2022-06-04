@@ -10,11 +10,13 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wp_guarapo' ); ?></h1>
+	<header class="container mt-5">
+	<div class="d-flex justify-content-center">
+		<h1><?php esc_html_e( 'No hay resultados', 'wp_guarapo' ); ?></h1>
+	</div>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="entry-content container mb-5 d-flex flex-column align-items-center">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -34,13 +36,12 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wp_guarapo' ); ?></p>
+			<div class="mb-2"><?php esc_html_e( 'Lo sentimos, pero tu búsqueda no se consigue en los artículos. Intenta de nuevo.', 'wp_guarapo' ); ?></div>
+			<div class="mb-2"><?php
+			get_search_form(); ?> </div>
 			<?php
-			get_search_form();
-
-		else :
+			else :
 			?>
-
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wp_guarapo' ); ?></p>
 			<?php
 			get_search_form();

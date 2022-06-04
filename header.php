@@ -28,17 +28,21 @@
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
 		<header class="container site-header">
 			<nav class="navbar navbar-expand-md navbar-light" id="mainNav">
-				<div class="container justify-content-start">
+				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
      					 <span class="navbar-toggler-icon"></span>
     				</button>
-					<a class="navbar-brand" href="<?php bloginfo('url') ?>">
+					<a class="navbar-brand d-flex flex-column" href="<?php bloginfo('url') ?>">
 						<?php
 						if (has_custom_logo()) {
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
-						$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-						?> <img alt="<?php bloginfo('name') ?>" src="<?php echo $image[0] ?>"/> 
+						$image = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
+						$description = get_bloginfo('description');
+						?> 
+								<img class="navbar-brand-logo" height="65" width="204" alt="<?php bloginfo('name') ?>" src="<?php echo $image[0] ?>"/> 
+								<span class="navbar-brand-subtitle"><?php echo $description ?></span>
+							
 						<?php
 						} else {
 							bloginfo('name');

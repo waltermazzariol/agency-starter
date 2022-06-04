@@ -9,8 +9,12 @@
   &-brand {
     font-family: $navbar-font-family;
     color: $navbar-text-color;
+    @include media-breakpoint-down(md) {
+        margin: 0 auto 0 calc(25% - 35px);
+        display: table;
+      }
   
-    img {
+    &-logo {
       width: auto;
       height: 65px;
       image-rendering: auto;
@@ -21,8 +25,14 @@
       image-rendering: -webkit-optimize-contrast;
       @include media-breakpoint-down(md) {
         width: auto;
-        height: 50px;
       }
+    }
+    &-subtitle{
+      font-size: 0.9rem;
+      color: $gray;
+      padding-left: 0.5rem;
+      align-self: end;
+      margin-top: -10px;
     }
   }
   &-toggler {

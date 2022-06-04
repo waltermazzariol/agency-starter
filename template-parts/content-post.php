@@ -36,14 +36,6 @@
         <div class="row justify-content-md-center">
             <div class="col-md-8">
                 <?php the_content(); ?>
-                <div>
-                <?php create_relatedposts_shortcode() ?>
-                    </div>
-                <div class="mt-3 text-center">
-                    <hr class="center">
-                    <small> Comparte esta historia</small></br>
-                    <?php my_share_buttons(); ?>
-                </div>
             </div>
 
             <?php the_posts_pagination(); ?>
@@ -51,7 +43,7 @@
 
         <?php if ( get_edit_post_link() ) : ?>
         <footer class="entry-footer">
-            <?php
+        <?php
 			edit_post_link(
 				sprintf(
 					wp_kses(
@@ -69,6 +61,15 @@
 				'</span>'
 			);
 			?>
+        <div class="mt-3 text-center">
+            <hr class="center">
+            <small> Comparte esta historia</small></br>
+            <?php my_share_buttons(); ?>
+        </div>
+        <div>
+            <?php create_relatedposts_shortcode() ?>
+        </div>      
+           
         </footer><!-- .entry-footer -->
         <?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
