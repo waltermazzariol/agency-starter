@@ -11,10 +11,10 @@ $gray-200:                    #e4e4e4;
 $gray-900:                    #30302e;
 $beige-100:                   #f0ebe3;
 $brown:                       #54341E;
-$light-brown:                 #B49E90;
+$light-brown:                 #FD8982;
 $dark-brown:                  #301D11;
-$primary:                     $brown;
-$secondary:                   $beige-100;
+$primary:                     #E7A580;
+$secondary:                   #EADCCE;
 $success:                     $secondary;
 $info:                        $gray-900;
 $warning:                     $primary;
@@ -54,7 +54,7 @@ $h1-font-size:                  $font-size-base * 3;
 $h2-font-size:                  $font-size-base * 2.4375;
 $h3-font-size:                  $font-size-base * 1.5;
 $h4-font-size:                  $font-size-base * 0.9375;
-$h5-font-size:                  $font-size-base * 0.75;
+$h5-font-size:                  $font-size-base * 0.8;
 $h6-font-size:                  $font-size-base * 0.6875;
 $h1-line-height:                $font-size-base * 4.5;
 $h2-line-height:                $font-size-base * 3;
@@ -82,7 +82,7 @@ $h6-line-height-touch:          $font-size-base * 1.5;
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
-  md: 768px,
+  md: 850px,
   lg: 1024px,
   xl: 1280px,
   xxl: 1440px
@@ -91,8 +91,8 @@ $grid-breakpoints: (
 // Grid containers
 $container-max-widths: (
   sm: 100%,
-  md: 800px,
-  lg: 900px,
+  md: 900px,
+  lg: 1000px,
   xl: 1150px,
   xxl: 1310px
 );
@@ -112,11 +112,11 @@ $text-shadow-2: 0 1px 2px rgba(0, 0, 0, 0.5);
 
 $navbar-color: #ffffff;
 $navbar-cta-color: #ffffff;
-$navbar-cta-bg-color: $primary;
-$navbar-text-color: #ffffff;
+$navbar-cta-bg-color: #503030;
+$navbar-text-color: #503030;
 $navbar-text-color-hover: rgba(200, 200, 200, 0.2);
 $navbar-font-family: $headings-font-family;
 
 
-$navbar-togle-collapse: $primary;
+$navbar-togle-collapse: #503030;
 $navbar-togle-collapse-line: #ddd;

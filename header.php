@@ -27,7 +27,7 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
 		<header class="site-header">
-			<nav class="navbar navbar-expand-md navbar-light bg-white" id="mainNav">
+			<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white" id="mainNav">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
 						if (has_custom_logo()) {
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
 						$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-						echo '<img alt="logo" src="'.$image[0].'"/>';
+						echo '<img class="navbar-brand-logo" alt="logo" src="'.$image[0].'"/>';
 						} else {
 							bloginfo('name');
 						}

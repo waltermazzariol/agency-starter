@@ -30,4 +30,9 @@
     width: 100%;
     padding-bottom: auto;
     background-size: cover;
+    &-height{
+      height: 100%;
+      background-size: cover;
+      max-width: 100%;
+    }
   }

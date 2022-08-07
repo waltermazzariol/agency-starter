@@ -5,6 +5,22 @@
   &-full {
     width: 100%;
   }
+  &-menu{
+    background-color: $primary;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 4px;
+    align-self: flex-start;
+    @include media-breakpoint-down(xs) {
+      margin-bottom: 1rem;
+    }
+    
+    a{
+      font-size: 0.75rem s!important;
+      color: #FFFFFF!important;
+      
+    }
+  }
 
   &-basic {
     padding: 0.7rem 2.5rem;
@@ -14,6 +30,10 @@
     margin: 1rem 0;
     background-color: $primary;
     color: #FFFFFF;
+    border-color: transparent;
+    &-secondary{
+      background-color: $secondary;
+    }
     a {
       color: inherit;
       i {

@@ -28,8 +28,13 @@
                 src="<?php echo get_template_directory_uri() . '/dist/assets/images/headphone.svg'; ?>" alt="" />
             <?php $categories = get_the_category();
         if ( ! empty( $categories ) ) {
-            echo '<span class="podcast-card-cat">'.esc_html( $categories[0]->name ).'</span>';
-        }?>
+            if( $categories[0]->name  == "Podcast"){
+				echo '<span class="post-meta">Podcast</span>';
+			}
+			else{
+				echo '<span class="post-meta">Blog</span>';
+
+			}         }?>
         </div>
         <header class="entry-header">
             <?php

@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mb-3'); ?>>
 
 	<header class="text-center">
-		<img class="cover-image" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/cover.jpg" />
+		<img class="cover-image" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/cover1.jpg" />
 		<?php if(get_the_post_thumbnail_url()){ ?>
 		<div class="square-image">
 			<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
@@ -24,7 +24,14 @@
 		<?php } ?>
 		<?php $categories = get_the_category();
         if ( ! empty( $categories ) ) {
-            echo '<span class="post-meta">'.esc_html( $categories[0]->name ).'</span>';
+			if( $categories[0]->name  == "Podcast"){
+				echo '<span class="post-meta">Podcast</span>';
+			}
+			else{
+				echo '<span class="post-meta">Blog</span>';
+
+			} 
+            // echo '<span class="post-meta">'.esc_html( $categories[0]->name ).'</span>';
         }?>
 		<div class="container">
 			<h1 class="post-title animated fadeIn"><?php the_title(); ?></h1>
@@ -64,9 +71,6 @@
 	<section class="container py-5">
 		<hr />
 		<div class="row no-gutters">
-			<div class="col-12 text-center my-5">
-				<h2><span class="underline"><strong>Entradas Relacionadas</strong></span></h2>
-			</div>
 			<?php $args = array(
 					'category__in' => wp_get_post_categories( $post->ID ), 
                     'posts_per_page' => 3,

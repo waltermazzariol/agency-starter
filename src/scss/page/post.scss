@@ -24,10 +24,9 @@
 
     .entry-header {
         .post-thumbnail {
-            max-height: 250px;
+            max-height: 30vh;
             background-size: cover;
             overflow: hidden;
-            background-position: center;
             @include media-breakpoint-down(xs) {
                 max-height: 150px;
             }

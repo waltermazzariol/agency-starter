@@ -15,22 +15,34 @@
 			<?php if(get_the_post_thumbnail_url()){ ?>
 			<img class="card-loop-image" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
 			<?php }else{ ?>
-				<img class="podcast-card-image"
+				<img class="card-loop-image"
                 src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/preview.jpeg" alt="" />
 			<?php } ?>
 		</div>
 		<!-- <div class="entry-meta small">
 		<?php $categories = get_the_category();
         if ( ! empty( $categories ) ) {
-            echo '<div class="card-loop-cat">'.esc_html( $categories[0]->name ).'</div>';
-        }
+			if( $categories[0]->name  == "Podcast"){
+				echo '<span class="post-meta">Podcast</span>';
+			}
+			else{
+				echo '<span class="post-meta">Blog</span>';
+
+			}        }
 			wp_guarapo_posted_on();
 			wp_guarapo_posted_by();
 		?>
 		</div> -->
 		<?php $categories = get_the_category();
         if ( ! empty( $categories ) ) {
-            echo '<div class="card-loop-cat">'.esc_html( $categories[0]->name ).'</div>';
+			if( $categories[0]->name  == "Podcast"){
+				echo '<span class="card-loop-cat">Podcast</span>';
+			}
+			else{
+				echo '<span class="card-loop-cat">Blog</span>';
+
+			}  
+            // echo '<div class="card-loop-cat">'.esc_html( $categories[0]->name ).'</div>';
         }?>
 		<header class="entry-header">
 			<?php

@@ -24,7 +24,7 @@ get_header();
                         <div class="hero-subtitle animated fadeIn"><?php print_r($destacado['titulo_cabecera']); ?>
                         </div>
                         <h1 class="hero-title animated fadeInDown"><?php print_r($destacado['titulo']); ?></h1>
-                        <a href="" class="">
+                        <a href="<?php print_r($destacado['url_episodio']); ?>">
                             <img class="hero-icon title-icon"
                                 src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/play.svg" />
                             <span class="hero-listen ml-2 animated fadeIn">COMENZAR A ESCUCHAR</span>
@@ -42,14 +42,15 @@ get_header();
     <section class="container py-5">
         <div class="row no-gutters">
             <div class="col-12 text-center">
-                <h2><span class="underline animated fadeIn"><?php print_r($tacones_sabios['titulo']); ?></span></h2>
+                <h2><span class="underline"><?php print_r($tacones_sabios['titulo']); ?></span></h2>
             </div>
-            <div class="col-md-6 px-0" data-aos="fade-right">
-                <img class="img-fluid" src="<?php print_r($tacones_sabios['imagen']); ?>" alt="" />
+            <div class="col-md-6 px-0 box-image" data-aos="fade">
+                <img class="fluido" src="<?php print_r($tacones_sabios['imagen']); ?>" alt="" />
             </div>
-            <div class="col-md-6 px-0 align-self-center position-relative" data-aos="fade-left">
-                <div class="bg-light-brown text-white px-3 py-5">
-                    <div class="text-big mb-3"><?php print_r($tacones_sabios['descripcion']); ?></div>
+            <div class="col-md-6 px-0 align-self-center position-relative" data-aos="fade">
+                <div class="bg-secondary px-3 py-5">
+                    <div class="text-big mb-5"><?php print_r($tacones_sabios['descripcion']); ?></div>
+                    <a class="btn-basic" href="<?php print_r($tacones_sabios['url_leer_mas']); ?>">Leer Más </a>
                     <img class="raya"
                         src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/fondo-raya.png" />
                 </div>
@@ -71,7 +72,7 @@ get_header();
 
             <?php $args = array(
                     'posts_per_page' => 6,
-                    'cat'   => $nombre_categoria['categoria']
+                    'cat'   => $nombre_categoria['categoria']->term_id
                     );
                     
                     $arr_posts = new WP_Query( $args );
@@ -87,7 +88,7 @@ get_header();
                     wp_reset_postdata();
                     ?>
             <div class="col-12 my-5 text-center">
-                <a href="/category/health" class="btn-outline">Ver más</a>
+                <a href="/category/<?php echo esc_html($nombre_categoria['categoria']->slug)?>" class="btn-outline">Ver más</a>
             </div>
         </div>
     </section>
@@ -95,27 +96,26 @@ get_header();
     <?php
         $escuchanos = get_field('escuchanos');
     ?>
-    <section class="container-fluid bg-light-brown py-5"
-        style="background-image: url('<?php print_r($escuchanos['imagen']); ?>'); background-repeat: no-repeat; background-size: cover;">
+    <section class="container-fluid bg-secondary py-5">
         <div class="row no-gutters">
-            <div class="col-12 text-center text-white mt-5">
-                <p><?php print_r($escuchanos['titulo']); ?></p>
+            <div class="col-12 text-center">
+                <h2 class="mb-3"><?php print_r($escuchanos['titulo']); ?></h2>
                 <div  data-aos="zoom-in" class="d-flex justify-content-center">
                     <?php
                     $iconos_item = $escuchanos['iconos'];
                     if ($iconos_item) : foreach ($iconos_item as &$value) : ?>
                     <a href="<?php echo $value['url']; ?>" target="_blank"><i
-                            class="<?php echo $value['icono']; ?> mx-3 text-white"></i></a>
+                            class="<?php echo $value['icono']; ?> mx-3"></i></a>
                     <?php endforeach; endif; ?>
                 </div>
             </div>
         </div>
     </section>
-    <section class="container-fluid bg-dark-brown pt-3 px-0">
+    <section class="container-fluid bg-light-brown pt-3 px-0">
         <div class="d-flex justify-content-center align-items-center">
-            <h3 class="text-white">@taconessabios</h3>
+            <h3 class="text-white">Conversemos en las redes @taconessabios</h3>
         </div>
-        <div class="row no-gutters mx-0">
+        <!-- <div class="row no-gutters mx-0">
             <?php
              $galeria = get_field('galeria');
             if ($galeria) : foreach ($galeria as &$value) : ?>
@@ -124,7 +124,7 @@ get_header();
                     <img class="fluid-img" src="<?php echo $value['imagen']; ?>" /></a>
             </div>
             <?php endforeach; endif; ?>
-        </div>
+        </div> -->
     </section>
 
     <?php
@@ -136,14 +136,15 @@ get_header();
                 <img class="title-icon mb-3"
                     src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/blog.svg" />
                 <h3 class="mb-4"><span
-                        class="underline"><strong><?php print_r($nombre_categoria['titulo']); ?></strong></span></h3>
+                        class="underline"><strong><?php print_r($nombre_categoria_blog['titulo']); ?></strong></span></h3>
+
             </div>
-            <?php $args = array(
-                    'posts_per_page' => 3,
-                    'cat'   => $nombre_categoria_blog['categoria']
+            <?php $args_2 = array(
+                    'posts_per_page' => 6,
+                    'cat'   => $nombre_categoria_blog['categoria']->term_id
                     );
                     
-                    $arr_posts = new WP_Query( $args );
+                    $arr_posts = new WP_Query( $args_2 );
                     if ( $arr_posts->have_posts() ) :
  
                         while ( $arr_posts->have_posts() ) :
@@ -156,7 +157,7 @@ get_header();
                     wp_reset_postdata();
                     ?>
             <div class="col-12 my-5 text-center">
-                <a class="btn-outline">Ver más</a>
+                <a href="/category/<?php echo esc_html($nombre_categoria_blog['categoria']->slug) ?>" class="btn-outline">Ver más</a>
             </div>
         </div>
     </section>

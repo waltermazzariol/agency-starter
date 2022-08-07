@@ -9,8 +9,12 @@
             text-transform: uppercase;
             font-size: 1rem;
             margin: auto;
-            img {
+            &-logo {
                 max-height: 60px;
+                max-width: 300px;
+                image-rendering: auto;
+                image-rendering: crisp-edges;
+                image-rendering: pixelated;
             }
         }
         &-toggler {
@@ -28,11 +32,11 @@
         text-transform: uppercase;
         .nav-link{
             font-family: $headings-font-family;
-            color: $primary;
+            color: $navbar-text-color;
             font-weight: 400;
             font-size: 0.8rem;
             &:hover{
-                font-weight: 700;
+                color: darken($color: $navbar-text-color, $amount: 20);
             }
         }
     }

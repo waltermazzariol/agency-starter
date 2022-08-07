@@ -12,7 +12,7 @@ get_header();
 
 <main id="primary" class="site-main">
 <header class="text-center">
-		<img class="cover-image mb-3" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/cover.jpg" />
+		<img class="cover-image mb-3" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/cover1.jpg" />
 		
 		<div class="container">
 			<h1 class="post-title animated fadeIn"><span class="underline"><?php the_archive_title("");?></span></h1>
