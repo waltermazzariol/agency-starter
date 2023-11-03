@@ -9,158 +9,71 @@
  // Body text
 // -------------------------
 
-// html {
-//   font-size: 62.5%;
-// }
-
-body {
-  font-size: $font-size-base-touch;
-  font-weight: $font-weight-normal;
-  font-family: $font-family-base;
-  color: $body-color;
-
-  @include media-breakpoint-up(lg) {
-    @include font-size($font-size-base);
-  }
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5 {
-  margin-bottom: 0.5rem;
-
-  @include media-breakpoint-up(lg) {
-    margin-bottom: 1rem;
-  }
-}
-
-ol,
-ul,
-p,
-blockquote,
-.preamble {
-  margin-bottom: 1.5rem;
-  @include media-breakpoint-up(lg) {
-    margin-bottom: 1.5rem;
-  }
-}
-
-br{
-  padding-bottom:1rem;
-}
-
-// Headings
-// -------------------------
-h1,
-h2,
-h3,
-h4,
-.h1,
-.h2,
-.h3,
-.h4 {
-  font-family: $headings-font-family;
-}
-
-h5,
-h6,
-.h5,
-.h6 {
-  font-family: $headings-font-family;
-}
-
-h1,
-.h1 {
-  color: $text-color-1;
-  font-size: $h1-font-size-touch;
-  font-weight: $font-weight-normal;
-  line-height: $h1-line-height-touch;
-  text-transform: uppercase;
-
-  @include media-breakpoint-up(lg) {
-    @include font-size($h1-font-size);
-    letter-spacing: 0.22px;
-    line-height: $h1-line-height;
-  }
-}
-
-h2,
-.h2 {
-  color: $text-color-1;
-  font-size: $h2-font-size-touch;
-  font-weight: $font-weight-bold;
-  line-height: $h2-line-height-touch;
-  text-transform: initial;
-  @include media-breakpoint-up(lg) {
-    @include font-size($h2-font-size);
-    line-height: $h2-line-height;
-  }
-}
-
-h3,
-.h3 {
-  color: $text-color-1;
-  font-size: $h3-font-size-touch;
-  font-weight: $font-weight-bold;
-  letter-spacing: 0.06px;
-  line-height: $h3-line-height-touch;
-  text-transform: initial;
-
-  @include media-breakpoint-up(lg) {
-    @include font-size($h3-font-size);
-    letter-spacing: 0.08px;
-    line-height: $h3-line-height;
-  }
-}
-
-h4,
-.h4 {
-  color: $text-color-1;
-  font-size: $h4-font-size-touch;
-  font-weight: $font-weight-normal;
-  letter-spacing: 0.05px;
-  line-height: $h4-line-height-touch;
-  color: $gray-200;
-
-  @include media-breakpoint-up(lg) {
-    @include font-size($h4-font-size);
-    line-height: $h4-line-height;
-  }
-}
-
-h5,
-.h5 {
-  color: $text-color-1;
-  font-size: $h5-font-size-touch;
-  font-weight: $font-weight-bold;
-  letter-spacing: normal;
-  line-height: $h5-line-height-touch;
-  text-transform: initial;
-
-  @include media-breakpoint-up(lg) {
-    @include font-size($h5-font-size);
-    line-height: $h5-line-height;
-  }
-}
-
-.text-gray{
-    color: $gray-200;
-}
-
-small{
+body,
+html {
+  width: 100%;
+  height: 100%;
   font-size: 1rem;
 }
 
-.subtitle{
-  margin-top: -10px;
-  margin-bottom: 30px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headings-font-family;
+  line-height: 1.5em;
+}
+h1,
+h2,
+h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+h4,
+h5,
+h6 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+h1 {
+  font-size: 3.3125rem;
+  line-height: 1.15em;
+  font-weight: $font-weight-base;
+}
+h2 {
+  font-size: 2.2rem;
+  line-height: 1.2em;
+  font-weight: $font-weight-base;
+}
+h3 {
+  font-size: 1.5625rem;
+  line-height: 1.4em;
+  font-weight: $font-weight-base;
+}
+h4 {
+  font-size: 1.125rem;
+  line-height: 1.5em;
+}
+h5 {
+  font-size: 1.0625rem;
+  line-height: 1.55em;
+}
+h6 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+p {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  font-family: $font-family-base;
+}
+body {
+  background-color: $body-background;
+  color: $text-color;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
 }

@@ -142,6 +142,17 @@ function wp_guarapo_widgets_init()
 	);
 	register_sidebar(
 		array(
+			'name'          => esc_html__('Footer 2', 'wp_guarapo'),
+			'id'            => 'footer_area_two',
+			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
 			'name'          => esc_html__('Header 1', 'wp_guarapo'),
 			'id'            => 'header_area_icons',
 			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
