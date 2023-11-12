@@ -12,6 +12,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.site {
+  background-image: url(https://waltermazzariol.com/bg.png),linear-gradient(#FFFFFF,#FFFFFF);
+  color: $primary;
+  font-size: 1rem;
+  text-align: left; 
+  border: 14px solid $light-gray;
+  padding: 10px;
+}
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -24,27 +32,17 @@
   box-sizing: inherit;
 }
 
-/**
- * Basic styles for links
- */
- a {
-  color: inherit;
-  text-decoration: none;
-  &:hover{
-    text-decoration: none!important;
-}
-}
-
 hr.center{
   margin-left: auto;
   margin-right: auto;
 }
 
 hr{
-  color: $light-gray;
+  color: $primary;
   width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
-
-.ml-2{
-  margin-left: 2rem;
+i{
+  font-size: 1rem;
 }

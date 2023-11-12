@@ -1,12 +1,12 @@
 // 1. Vendors
 @import
+'./abstracts/variables',
 './vendors/normalize',
 './vendors/bootstrap',
 './vendors/wordpress';
 
 // 2. Configuration and helpers
 @import
-  './abstracts/variables',
   './abstracts/functions',
   './abstracts/mixins';
 

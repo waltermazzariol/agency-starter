@@ -63,7 +63,7 @@
 			?>
         <div class="mt-3 text-center">
             <hr class="center">
-            <small> Comparte esta historia</small></br>
+            <small> Share this story</small></br>
             <?php my_share_buttons(); ?>
         </div>
         <div>

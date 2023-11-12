@@ -1,13 +1,46 @@
 .hero {
-  &-title {
-    color: $white;
-  }
-  &-subtitle {
-    color: $primary;
-  }
-  &-listen {
-    color: $white;
-  }
+	  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: $white;
+    overflow:hidden;
+    max-height: 300px;
+    position:relative;
+	@include media-breakpoint-up(md) {
+		min-height: 300px;
+	  }
+	&-wrapper {
+		min-height: 300px;
+		position:relative;
+		background-color: rgba(0,0,0,0.4);
+		@include media-breakpoint-up(md) {
+			min-height: 300px;
+		  }
+	}
+	&-img{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	h1.hero-title {
+		color: #ffffff;
+		font-size: 2.6rem;
+    margin-left: 1rem;
+    text-transform: uppercase;
+	@include media-breakpoint-up(md) {
+		font-size: 5rem;
+	  }
+	@include media-breakpoint-up(lg) {
+		font-size: 8rem;
+	}
+	}
+	.hero-subtitle {
+		color: #ffffff;
+		margin-bottom: 0.5rem;
+		font-size: 1rem;
+		padding: 0 15px;
+	}
 }
 
 .cover {
@@ -50,3 +83,15 @@
     color: $white;
   }
 }
+
+.main-heading {
+	font-size: 2.6rem;
+  margin-left: 1rem;
+    text-transform: uppercase;
+	@include media-breakpoint-up(md) {
+		font-size: 5rem;
+	  }
+	@include media-breakpoint-up(lg) {
+		font-size: 8rem;
+	}
+  }

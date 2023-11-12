@@ -8,6 +8,16 @@
         color: #d7d7d7;
       }
     }
+    
+  }
+
+  .footer{
+    font-size: 0.8rem;
+    color: #7b7b7b; 
+    margin-top: auto;
+    .icon {
+      max-height: 20px;
+    }
     .social-contact {
       a {
         margin-bottom: 0.5rem;
@@ -18,13 +28,4 @@
         }     
       }
     }    
-  }
-
-  .footer{
-    font-size: 0.8rem;
-    color: #7b7b7b; 
-    margin: auto;
-    .icon {
-      max-height: 20px;
-    }
   }

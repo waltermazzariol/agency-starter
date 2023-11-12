@@ -11,7 +11,7 @@
  */
 
 ?>
-<section class="footer mt-5 py-5">
+<section class="footer py-5">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-md-8 py-4">

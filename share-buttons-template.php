@@ -10,7 +10,7 @@
     </li>
     <li>
         <a class="share-twitter" href="https://twitter.com/intent/tweet?url=<?php the_permalink();?>&text=<?php echo the_title(); ?>&via=<?php the_author_meta( 'twitter' ); ?>" title="Tweet this" target="_blank">
-        <i class="fab fa-twitter"></i>
+        <i class="fab fa-x-twitter"></i>
         </a>
     </li>
     <li>
