@@ -50,7 +50,7 @@
   .box-loop {
     position: relative;
     width: 100%;
-    padding-top: 56.25%;
+    aspect-ratio: 5 / 4;
     overflow: hidden;
     border-radius: 0.25rem;
     transition: 0.3s;
