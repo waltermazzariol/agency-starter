@@ -25,7 +25,8 @@ get_header();
 			</header><!-- .entry-header -->
 		<?php elseif(is_front_page()):
 			?>
-				<header class="hero">
+					<h1 class="main-heading">Walter Mazzariol</h1>
+					<header class="hero">
 					<img class="hero-img" src="<?php echo get_template_directory_uri() . '/dist/assets/images/hero.jpg'?>" alt="background"/>
 					<div class="hero-wrapper d-flex flex-column justify-content-end align-items-start" >
 						<h1 class="hero-title">Blog*</h1>

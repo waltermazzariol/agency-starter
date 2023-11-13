@@ -25,15 +25,22 @@
 	}
 	h1.hero-title {
 		color: #ffffff;
-		font-size: 2.6rem;
-    margin-left: 1rem;
-    text-transform: uppercase;
-	@include media-breakpoint-up(md) {
-		font-size: 5rem;
-	  }
-	@include media-breakpoint-up(lg) {
-		font-size: 8rem;
-	}
+		font-size: 2.5rem;
+		line-height: 3rem;
+		margin-bottom: 1rem;
+		padding: 0 15px;
+		@include media-breakpoint-up(md) {
+			font-size: 3.5rem;
+			line-height: 4rem;
+		  }
+		  @include media-breakpoint-up(lg) {
+			font-size: 3.8rem;
+			line-height: 4.2rem;
+		  }
+		  @include media-breakpoint-up(xl) {
+			font-size: 4rem;
+			line-height: 4.5rem;
+		  }
 	}
 	.hero-subtitle {
 		color: #ffffff;
@@ -48,6 +55,17 @@
     font-size: $h2-font-size;
   }
 }
+
+.main-heading {
+	  font-size: 2.6rem;
+    text-transform: uppercase;
+	  @include media-breakpoint-up(md) {
+		  font-size: 5rem;
+	  }
+    @include media-breakpoint-up(lg) {
+      font-size: 8rem;
+    }
+  }
 
 .cover-page {
   position: relative;
@@ -83,15 +101,3 @@
     color: $white;
   }
 }
-
-.main-heading {
-	font-size: 2.6rem;
-  margin-left: 1rem;
-    text-transform: uppercase;
-	@include media-breakpoint-up(md) {
-		font-size: 5rem;
-	  }
-	@include media-breakpoint-up(lg) {
-		font-size: 8rem;
-	}
-  }
