@@ -24,3 +24,14 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
 
+.box-loop{
+	aspect-ratio: 5 / 4;
+}
+
+.header-h2{
+	font-size: calc(1.305rem + .66vw);
+    line-height: 1.7rem;
+	color: #272727;
+    font-weight: 700;
+    text-transform: initial;
+}
