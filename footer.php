@@ -23,7 +23,7 @@
 
 <footer id="colophon" class="site-footer container-fluid">
 	<div class="site-info text-center">
-		<a href="https://guarapomedia.com/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/guarapo_logo.svg" /></a>
+		<a href="https://guarapomedia.com/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/guarapo_logo.svg" alt="Guarapo Media - Agencia Digital"/></a>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
