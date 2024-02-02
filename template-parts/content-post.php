@@ -40,36 +40,41 @@
 
             <?php the_posts_pagination(); ?>
         </div><!-- .entry-content -->
+    </div>
 
         <?php if ( get_edit_post_link() ) : ?>
-        <footer class="entry-footer">
-        <?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'wp_guarapo' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-        <div class="mt-3 text-center">
-            <hr class="center">
-            <small> Comparte esta historia</small></br>
-            <?php my_share_buttons(); ?>
-        </div>
-        <div>
-            <?php create_relatedposts_shortcode() ?>
-        </div>      
-           
-        </footer><!-- .entry-footer -->
-        <?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+        <div class="entry-footer">
+            <?php
+                edit_post_link(
+                    sprintf(
+                        wp_kses(
+                            /* translators: %s: Name of current post. Only visible to screen readers */
+                            __( 'Edit <span class="screen-reader-text">%s</span>', 'wp_guarapo' ),
+                            array(
+                                'span' => array(
+                                    'class' => array(),
+                                ),
+                            )
+                        ),
+                        wp_kses_post( get_the_title() )
+                    ),
+                    '<span class="edit-link">',
+                    '</span>'
+                );
+                ?>
+            
+            <?php endif; ?>
+            <div class="mt-3 text-center">
+                <hr class="center">
+                <small> Comparte esta historia</small></br>
+                <?php my_share_buttons(); ?>
+            </div>
+            
+            <div>
+                <?php create_relatedposts_shortcode() ?>
+            </div>      
+        </div><!-- .entry-footer -->
+        
+</article>
+
+<!-- #post-<?php the_ID(); ?> -->
