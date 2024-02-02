@@ -142,6 +142,17 @@ function wp_guarapo_widgets_init()
 	);
 	register_sidebar(
 		array(
+			'name'          => esc_html__('Footer 2', 'wp_guarapo'),
+			'id'            => 'footer_area_two',
+			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
 			'name'          => esc_html__('Header 1', 'wp_guarapo'),
 			'id'            => 'header_area_icons',
 			'description'   => esc_html__('Add widgets here.', 'wp_guarapo'),
@@ -162,7 +173,7 @@ function wp_guarapo_scripts()
 	wp_enqueue_style('wp_guarapo-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('wp_guarapo-style', 'rtl', 'replace');
 
-	wp_enqueue_script('wp_guarapo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('wp_guarapo-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), _S_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -174,13 +185,13 @@ add_action('wp_enqueue_scripts', 'wp_guarapo_scripts');
 /**
  * Enqueue scripts and styles from dist.
  */
-function wp_guarapo_assets()
+function _themename_assets()
 {
-	wp_enqueue_style('wp_guarapo-stylesheet', get_template_directory_uri() . '/dist/css/bundle.css', array(), '1.0.0', 'all');
+	wp_enqueue_style('_themename-stylesheet', get_template_directory_uri() . '/dist/css/bundle.css', array(), '1.0.0', 'all');
 
-	wp_enqueue_script('wp_guarapo-scripts', get_template_directory_uri() . '/dist/js/bundle.js', array(), '1.0.0', true);
+	wp_enqueue_script('_themename-scripts', get_template_directory_uri() . '/dist/js/bundle.js', array(), '1.0.0', true);
 }
-add_action('wp_enqueue_scripts', 'wp_guarapo_assets');
+add_action('wp_enqueue_scripts', '_themename_assets');
 
 /**
  * Register Custom Navigation Walker
@@ -254,7 +265,7 @@ add_filter('upload_mimes', 'add_file_types_to_uploads');
 
 function add_animate_css()
 {
-	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css');
+	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 
 }
 add_action('wp_enqueue_scripts', 'add_animate_css');
@@ -519,11 +530,9 @@ add_shortcode('recent_posts', 'guarapo_recent_posts_shortcode');
 add_theme_support( 'responsive-embeds' );
 
 // Create Shortcode related_posts_
+
 // Shortcode: [related_posts_ number="5"]
 function create_relatedposts_shortcode() {
-
-	
-
 	// Custom WP query relatedposts
 	$args_relatedposts = array(
 		'posts_per_page' => '1',
@@ -544,5 +553,4 @@ function create_relatedposts_shortcode() {
 	}
 
 	wp_reset_postdata();
-
 }
