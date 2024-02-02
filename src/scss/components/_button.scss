@@ -1,52 +1,57 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
-.btn {
-  border-radius: 25px;
-  padding: 0.5rem 1.5rem;
-  font-size: 0.85rem;
-  max-width:20em;
-  white-space:nowrap;
-  overflow:hidden;
-  &-full {
-    width: 100%;
+// _buttons.scss
+
+// Define variables for button styles
+$button-padding: 0.5rem 1rem;
+$button-border-radius: 8px;
+$button-font-size:  0.9rem;
+$button-solid-bg: $primary;
+$button-solid-color: $text-color;
+$button-outline-border: 1px solid $primary;
+$button-outline-color: $primary;
+$button-font-fmaily: $headings-font-family;
+
+// Common styles for both buttons
+@mixin button-base() {
+  padding: $button-padding;
+  border-radius: $button-border-radius;
+  font-size: $button-font-size;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;  
+}
+
+// Solid button
+.button {
+  @include button-base();
+  background-color: $button-solid-bg;
+  color: $button-solid-color;
+  @media (min-width: 768px){
+      padding: 0.5rem 1.5rem;
+      font-size: 1.1rem;
+    }		
+  &:hover, &:active, &:focus {
+    background-color: darken($button-solid-bg, 10%);
+    color: $button-solid-color;
   }
-  &-basic {
-    border: none;
-    color: #ffffff;
-    background-color: $primary;
-    a{
-      color: inherit;
-    }
-    i {
-      color: inherit;
-      font-size: 1rem;
-    }
-    &:focus {
-      outline: none;
-    }
-    &:hover {
-      text-decoration: none;
-      background-color: darken($primary, 10%)!important;
-    }
+
+  &-big{
+    padding: 0.7rem 1.5rem;
   }
-  &-outline {
-    border: 1px solid $primary;
-    a{
-      color: inherit;
-    }
-    i {
-      color: inherit;
-      font-size: 1rem;
-    }
-    &:focus {
-      outline: none;
-    }
-    &:hover {
-      text-decoration: none;
-      background-color: $primary!important;
-      border: 1px solid $primary;
-      color: $white!important;
-    }
+}
+
+// Outline button
+.button-outline {
+  @include button-base();
+  border: $button-outline-border;
+  color: $button-outline-color;
+  background-color: transparent;
+
+  &:hover, &:active, &:focus {
+    background-color: $button-outline-color;
+    color: $button-solid-color;
   }
 }

@@ -21,7 +21,7 @@ $black:                       #000000;
 // Text Colors
 $header-color:                  $dark-black;
 $text-color-a:                  $dark-black;
-$text-color:                    $dark-black;
+$text-color:                    $darker-black;
 $primary:                       $dark-black;
 $secondary:                     darken( $primary, 10% );
 
@@ -35,6 +35,10 @@ $font-family-natosans:          "Nato Sans", sans-serif;
 $font-family-opensans:          "Open Sans", sans-serif;
 $font-family-inter:             "Inter", sans-serif;
 $font-family-anton:             "Anton", sans-serif;
+
+// Font overrides
+$font-family-base: $font-family-roboto !default;
+$headings-font-family: $font-family-inter !default;
 
 // Font Size
 $font-size-base: 1rem;
@@ -92,10 +96,6 @@ $grid-breakpoints: (
   xl: 1280px,
   xxl: 1440px
 );
-
-// Font overrides
-$font-family-base: $font-family-roboto !default;
-$headings-font-family: $font-family-anton !default;
 
 // Custom variables
 $navbar-height: 60px;

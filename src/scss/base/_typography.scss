@@ -27,10 +27,17 @@ h6 {
 }
 h1,
 h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $header-color;
+}
+h1,
+h2,
 h3 {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
-  text-transform: uppercase;
 }
 h4,
 h5,
@@ -39,19 +46,29 @@ h6 {
   margin-bottom: 0.5rem;
 }
 h1 {
-  font-size: 3.3125rem;
-  line-height: 1.15em;
-  font-weight: $font-weight-base;
+		font-weight: $font-weight-bold;
+		font-size: 2.5rem;
+    line-height: 1.2;
+		margin-bottom: 0.5rem;
+		@media (min-width: 479px){
+			font-size: 3rem;
+		  }		 
+    @media (min-width: 768px){
+      font-size: 4rem;
+      }		
 }
 h2 {
-  font-size: 2.2rem;
-  line-height: 1.2em;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
+  font-size: 2rem;
+  line-height: 1.3;
+  @media (min-width: 768px){
+    font-size: 2.8rem;
+    }	
 }
 h3 {
   font-size: 1.5625rem;
   line-height: 1.4em;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
 }
 h4 {
   font-size: 1.125rem;
@@ -66,9 +83,14 @@ h6 {
   text-transform: uppercase;
 }
 p {
-  font-size: 1rem;
+  font-size: .9rem;
+  line-height: 1.4;
   margin: 0 0 10px;
+  color: $text-color;
   font-family: $font-family-base;
+  @media (min-width: 768px){
+    font-size: 1rem;
+    }	
 }
 body {
   background-color: $body-background;
@@ -76,4 +98,32 @@ body {
   margin: 0;
   font-size: 1rem;
   text-align: left;
+}
+
+.text-color{
+  &-secondary{
+    color: $gray-200;
+  }
+}
+
+.text-size-large{
+ font-size: 1.25rem;
+ line-height: 1.4;
+ @media (min-width: 768px){
+  font-size: 1.5rem;
+  }	
+}
+
+.text-size-medium{
+  font-size: 1.1rem;
+  line-height: 1.4;
+  @media (min-width: 768px){
+    font-size: 1.25rem;
+    }	
+}
+
+.text-size-small{
+  font-size: .85rem;
+  line-height: 1.4;
+  color: $gray-200;
 }
