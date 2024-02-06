@@ -173,7 +173,7 @@ function wp_guarapo_scripts()
 	wp_enqueue_style('wp_guarapo-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('wp_guarapo-style', 'rtl', 'replace');
 
-	wp_enqueue_script('wp_guarapo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('wp_guarapo-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), _S_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -265,7 +265,7 @@ add_filter('upload_mimes', 'add_file_types_to_uploads');
 
 function add_animate_css()
 {
-	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css');
+	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 
 }
 add_action('wp_enqueue_scripts', 'add_animate_css');
@@ -530,14 +530,12 @@ add_shortcode('recent_posts', 'guarapo_recent_posts_shortcode');
 add_theme_support( 'responsive-embeds' );
 
 // Create Shortcode related_posts_
+
 // Shortcode: [related_posts_ number="5"]
 function create_relatedposts_shortcode() {
-
-	
-
 	// Custom WP query relatedposts
 	$args_relatedposts = array(
-		'posts_per_page' => '3',
+		'posts_per_page' => '1',
 		'order' => 'DESC',
 	);
 
@@ -555,5 +553,4 @@ function create_relatedposts_shortcode() {
 	}
 
 	wp_reset_postdata();
-
 }
