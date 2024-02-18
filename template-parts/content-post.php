@@ -13,7 +13,7 @@
     <header class="container card-loop">
             <div class="row justify-content-md-center ">
                 <div class="col-md-8">
-                    <h1 class="cover-title text-center"><?php the_title(); ?></h1>
+                    <h1 class="cover-title text-center mt-5"><?php the_title(); ?></h1>
                     <?php	if ( 'post' === get_post_type() ) :
 					?>
                     <div class="entry-meta mb-3 small text-center">
@@ -66,7 +66,7 @@
             <?php endif; ?>
             <div class="mt-3 text-center">
                 <hr class="center">
-                <small> Comparte esta historia</small></br>
+                <small> Share this article</small></br>
                 <?php my_share_buttons(); ?>
             </div>
             

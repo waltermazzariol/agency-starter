@@ -1,13 +1,41 @@
+/*Hero*/
 .hero {
-  &-title {
-    color: $white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  overflow: hidden;
+  min-height: 700px;
+  position: relative;
+}
+
+img.hero-img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-wrapper {
+  position: relative;
+  background: rgb(31,41,55);
+  background: linear-gradient(0deg, rgba(31,41,55,1) 4%, rgba(31,41,55,0) 100%);  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  min-height: 700px;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.hero-description{
+  max-width: 80%;
+}
+
+@media (min-width: 768px) {
+  .hero-description{
+    max-width: 600px;
   }
-  &-subtitle {
-    color: $primary;
-  }
-  &-listen {
-    color: $white;
-  }
+  
 }
 
 .cover {

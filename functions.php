@@ -166,6 +166,16 @@ function wp_guarapo_widgets_init()
 add_action('widgets_init', 'wp_guarapo_widgets_init');
 
 /**
+ * Add animate on scroll support
+ */
+
+ add_action( 'wp_enqueue_scripts', 'add_aos_animation' );
+ function add_aos_animation() {
+     wp_enqueue_style('AOS_animate', 'https://unpkg.com/aos@2.3.1/dist/aos.css', false, null);
+     wp_enqueue_script('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', false, null, true);
+ }
+
+/**
  * Enqueue scripts and styles.
  */
 function wp_guarapo_scripts()
@@ -542,7 +552,7 @@ function create_relatedposts_shortcode() {
 	$relatedposts = new WP_Query( $args_relatedposts );
 
 	if ( $relatedposts->have_posts() ) {
-		echo '<div class="container mt-5"><div class="row"><hr><h3 class="mt-5 mb-4">Artículos Relacionados</h3>';
+		echo '<div class="container mt-5"><div class="row"><hr><h3 class="mt-5 mb-4">Related articles</h3>';
 		while ( $relatedposts->have_posts() ) {
 			$relatedposts->the_post();
 			get_template_part( 'template-parts/content', 'loop' );

@@ -1,0 +1,24 @@
+.title{
+    position: relative;
+    margin-bottom: 7rem;
+    &-front{
+        position: absolute; 
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-weight: 700;
+        color: $dark-black;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+    }
+    &-back{
+        position: absolute; 
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-weight: 900;
+        color: $light-gray;
+        font-size: 5rem;
+        top: -35px;
+        text-transform: uppercase;
+    }
+}

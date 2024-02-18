@@ -3,10 +3,10 @@
 // -----------------------------------------------------------------------------
 // https://bootstrapvars.com/4.4/
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
 
-$light-gray:                  #dbdbdb;
+$light-gray:                  #ECECEC;
 $gray-100:                    #f7f7f7;
 $gray-200:                    #e4e4e4;
 $gray-900:                    #30302e;
@@ -14,7 +14,7 @@ $red:                         #f05555;
 $dark-black:                  #1C1B1B;
 $darker-black:                #333333;
 $orange:                      #f4623a;
-$blue:                        #03a9f4;
+$blue:                        #1F2937;
 $white:                       #FFFFFF;
 $black:                       #000000;
 
@@ -22,7 +22,7 @@ $black:                       #000000;
 $header-color:                  $dark-black;
 $text-color-a:                  $dark-black;
 $text-color:                    $darker-black;
-$primary:                       $dark-black;
+$primary:                       $blue;
 $secondary:                     darken( $primary, 10% );
 
 $theme-colors: (
@@ -30,15 +30,12 @@ $theme-colors: (
 );
 
 // Font Family
-$font-family-roboto:            "Roboto", sans-serif;
-$font-family-natosans:          "Nato Sans", sans-serif;
-$font-family-opensans:          "Open Sans", sans-serif;
-$font-family-inter:             "Inter", sans-serif;
 $font-family-anton:             "Anton", sans-serif;
+$font-family-urbanist:          "Urbanist", sans-serif;
 
 // Font overrides
-$font-family-base: $font-family-roboto !default;
-$headings-font-family: $font-family-inter !default;
+$font-family-base: $font-family-urbanist !default;
+$headings-font-family: $font-family-anton !default;
 
 // Font Size
 $font-size-base: 1rem;
@@ -52,7 +49,7 @@ $font-weight-semibold:          600;
 $font-weight-bold:              700;
 $font-weight-bolder:            800;
 $font-weight-black:             900;
-$font-weight-base:              $font-weight-normal;
+$font-weight-base:              $font-weight-light;
 $line-height-base:              1.5;
 
 // Body
@@ -103,12 +100,12 @@ $navbar-height: 60px;
 $text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 $text-shadow-2: 0 1px 2px rgba(0, 0, 0, 0.5);
 
-$navbar-color: white;
+$navbar-color: $primary;
 $navbar-cta-color: white;
 $navbar-cta-bg-color: $primary;
-$navbar-text-color: $darker-black;
-$navbar-text-color-hover: rgba(200, 200, 200, 0.2);
-$navbar-font-family: $headings-font-family;
+$navbar-text-color: white;
+$navbar-text-color-hover: white;
+$navbar-font-family: $font-family-base;
 
 
 $navbar-togle-collapse: white;

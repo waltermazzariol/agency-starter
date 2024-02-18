@@ -26,7 +26,7 @@
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
-		<header class="container site-header">
+		<header class="container-fluid px-0 site-header">
 			<nav class="navbar navbar-expand-md navbar-light" id="mainNav">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -40,8 +40,8 @@
 						$image = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
 						$description = get_bloginfo('description');
 						?> 
-								<img class="navbar-brand-logo" height="90" width="90" alt="<?php bloginfo('name') ?>" src="<?php echo $image[0] ?>"/> 
-								<!-- <span class="navbar-brand-subtitle"><?php echo $description ?></span> -->
+							<img class="navbar-brand-logo" alt="<?php bloginfo('name') ?>" src="<?php echo $image[0] ?>"/> 
+							<!-- <span class="navbar-brand-subtitle"><?php echo $description ?></span> -->
 							
 						<?php
 						} else {
@@ -54,7 +54,7 @@
 						'theme_location'    => 'menu-1',
 						'depth'             => 2,
 						'container'         => 'div',
-						'container_class'   => 'collapse navbar-collapse justify-content-start',
+						'container_class'   => 'collapse navbar-collapse justify-content-end',
 						'container_id'      => 'navbarScroll',
 						'menu_class'        => 'nav navbar-nav',
 						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
@@ -67,5 +67,4 @@
 				
 				</div>
 			</nav>
-			<hr/>
 		</header><!-- #masthead -->

@@ -20,8 +20,8 @@ get_header();
 	<?php if ( have_posts() ) :	
 		if ( is_home() && ! is_front_page() ) :
 				?>
-	<header class="entry-header cover-page mt-5">
-		<h1 class="entry-title"><?php single_post_title(); ?></h1>
+	<header class="entry-header py-5 text-center">
+		<h1 class="entry-title "><?php single_post_title(); ?></h1>
 	</header><!-- .entry-header -->
 	
 	<?php endif; ?>

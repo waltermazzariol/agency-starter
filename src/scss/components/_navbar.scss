@@ -4,8 +4,7 @@
   min-height: $navbar-height;
 }
 .navbar {
-  padding-top: 1rem;
-  padding-bottom: 0;
+  padding-bottom: 0.5rem;
   &-brand {
     font-family: $navbar-font-family;
     color: $navbar-text-color;
@@ -15,8 +14,6 @@
       }
   
     &-logo {
-      width: 90px;
-      height: 90px;
       image-rendering: auto;
       image-rendering: crisp-edges;
       image-rendering: pixelated;
@@ -24,7 +21,6 @@
       /* Safari seems to support, but seems deprecated and does the same thing as the others. */
       image-rendering: -webkit-optimize-contrast;
       @include media-breakpoint-down(md) {
-        width: auto;
       }
     }
     &-subtitle{
@@ -38,11 +34,10 @@
   &-toggler {
     margin-right: 0.6rem;
     border-color: transparent;
-    //   &-icon {
-    //     // background-image: url("../../../assets/img/menu.svg");
-    //     max-width: 85%;
-
-    // }
+      &-icon {
+        background-image: url("../../dist/assets/images/menu-icon.svg");
+        max-width: 85%;
+    }
     &:focus {
       outline: none;
       box-shadow: none;

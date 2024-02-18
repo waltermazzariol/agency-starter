@@ -48,3 +48,24 @@ hr{
 .ml-2{
   margin-left: 2rem;
 }
+
+/* Margin */
+.margin-large{
+  margin-bottom: 6rem;
+}
+
+.margin-medium{
+  margin-bottom: 3rem;
+}
+
+.margin-small{
+  margin-bottom: 1rem;
+}
+
+.w-80{
+  max-width: 80%;
+}
+
+.bg-gray{
+  background-color: $light-gray;
+}

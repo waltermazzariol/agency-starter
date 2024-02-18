@@ -5,10 +5,10 @@
 
 // Define variables for button styles
 $button-padding: 0.5rem 1rem;
-$button-border-radius: 8px;
+$button-border-radius: 4px;
 $button-font-size:  0.9rem;
 $button-solid-bg: $primary;
-$button-solid-color: $text-color;
+$button-solid-color: white;
 $button-outline-border: 1px solid $primary;
 $button-outline-color: $primary;
 $button-font-fmaily: $headings-font-family;
@@ -37,9 +37,16 @@ $button-font-fmaily: $headings-font-family;
     background-color: darken($button-solid-bg, 10%);
     color: $button-solid-color;
   }
-
   &-big{
     padding: 0.7rem 1.5rem;
+  }
+  &-white{
+    background-color: white;
+    color: $text-color;
+    &:hover, &:active, &:focus {
+      background-color: darken(white, 10%);
+      color: $button-solid-color;
+    }
   }
 }
 

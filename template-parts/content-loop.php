@@ -9,7 +9,7 @@
 
 ?>
 
-<article class="col-md-4 mb-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="col-md-4 mb-3" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="card-loop">
 		
 		<?php $feature_img = ((get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() :  catch_that_image())
@@ -19,11 +19,10 @@
 		</div>
 		<header class="entry-header">
 			<?php
-			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+			the_title( '<div class="text-size-medium"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></div>' );
 		 ?>
 		 <div class="entry-meta mb-2 small">
 			<?php
-				wp_guarapo_posted_by();
 				wp_guarapo_posted_on();
 				echo '<span class="reading-time">' . reading_time() . '</span>';
 			?>
