@@ -9,7 +9,7 @@
     font-family: $navbar-font-family;
     color: $navbar-text-color;
     @include media-breakpoint-down(md) {
-        margin: 0 auto 0 calc(25% - 35px);
+        margin: 0 auto 0 calc(13% - 27px);
         display: table;
       }
   

@@ -15,7 +15,11 @@
         src="<? echo get_field('hero_image') ?>"
         alt="Ernesto Rangel" />
     <div class="hero-wrapper" data-aos="fade-up">
-        <h1 class="text-white margin-small w-80"><?php echo get_field('hero_title') ?></h1>
+        <h1 class="text-white margin-small w-80">
+			<span class="hero-title-up"><?php echo get_field('hero_title_up') ?></span>
+			<span class="hero-title-down"><?php echo get_field('hero_title_down') ?></span>
+
+		</h1>
         <div
             class="text-size-medium text-white margin-small w-80 hero-description">
             <?php echo get_field('hero_description') ?></div>
@@ -40,11 +44,11 @@
 
   <div class="row g-0">
       <div class="col-12 col-md-5">
-	  <div class="px-3" data-aos="fade">
+	  <div class="px-3" data-aos="fade-up">
         <img class="img-fluid rounded-img mb-4 "  src="<? echo get_field('section_1_image') ?>" alt="Brickell Miami" />
       </div> </div>
       <div class="col-12 col-md-7">
-        <div class="px-3" data-aos="fade">
+        <div class="px-3" data-aos="fade-up">
 			<?php echo get_field('section_1_description') ?>
 		</div>
       </div>
@@ -57,12 +61,12 @@
 <div class="container px-0">
   <div class="row g-0">
       <div class="col-12 col-md-7 order-2 order-md-1">
-        <div class="px-3" data-aos="fade">
+        <div class="px-3" data-aos="fade-up">
 			<?php echo get_field('section_2_description') ?>
         </div>
       </div>
 	  <div class="col-12 col-md-5 order-1 order-md-2">
-		<div class="px-3" data-aos="fade">
+		<div class="px-3" data-aos="fade-up">
 			<img class="img-fluid rounded-img mb-4"  src="<? echo get_field('section_2_image') ?>" alt="ruben blades columbia university" /> 
 		</div>
       </div>
@@ -75,12 +79,12 @@
 <div class="container px-0">
   <div class="row g-0">
       <div class="col-12 col-md-5">
-		<div class="px-3" data-aos="fade">
+		<div class="px-3" data-aos="fade-up">
 			<img class="img-fluid rounded-img mb-4"  src="<? echo get_field('section_3_image') ?>" alt="UNIMET acto degrado" />
 		</div>
       </div>
       <div class="col-12 col-md-7">
-        <div class="px-3" data-aos="fade">
+        <div class="px-3" data-aos="fade-up">
 			<?php echo get_field('section_3_description') ?>
         </div>
       </div>
@@ -93,12 +97,12 @@
 <div class="container px-0">
   <div class="row g-0">
       <div class="col-12 col-md-7  order-2 order-md-1">
-        <div class="px-3" data-aos="fade">
+        <div class="px-3" data-aos="fade-up">
 			<?php echo get_field('section_4_description') ?>
         </div>
       </div>
 	  <div class="col-12 col-md-5  order-1 order-md-2">
-	  <div class="px-3" data-aos="fade">
+	  <div class="px-3" data-aos="fade-up">
         <img class="img-fluid rounded-img mb-4"  src="<? echo get_field('section_4_image') ?>" alt="Brooklyn-cumana" />
       </div> 
 	</div>
@@ -137,7 +141,7 @@
     </div>
 	
     <section class="container">
-        <div class="row no-gutters">
+        <div class="row no-gutters" data-aos="fade-up">
 				<?php $args_2 = array(
 						'posts_per_page' => 3					
 						);
