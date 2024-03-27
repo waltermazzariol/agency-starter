@@ -14,6 +14,7 @@ import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import concat from 'gulp-concat';
+
 var env = require('gulp-env');
 env({file: ".env.json"});
 
@@ -46,15 +47,15 @@ export const styles = () => {
 
 export const watchForChanges = () => {
   watch('src/scss/**/*.scss', series(styles, reload));
-  watch('src/images/**/*.{jpg,jpeg,png,svg,gif}', series(images, reload));
+  watch('src/assets/**/*.{jpg,jpeg,png,svg,gif}', series(images, reload));
   watch(['src/**/*','!src/{images,js,scss}','!src/{images,js,scss}/**/*'], series(copy, reload));
   watch('src/js/**/*.js', series(scripts, reload));
   watch("**/*.php", reload);
 }
 
 export const images = () => {
-  return src('src/images/**/*.{jpg,jpeg,png,svg,gif}')
-    .pipe(gulpif(PRODUCTION, imagemin()))
+  return src('src/assets/**/*.{jpg,jpeg,png,svg,gif}')
+    .pipe(imagemin())
     .pipe(dest('dist/images'));
 }
 

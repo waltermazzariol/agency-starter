@@ -13,7 +13,7 @@
     <header class="container card-loop">
             <div class="row justify-content-md-center ">
                 <div class="col-12">
-                    <div class="main-heading">Walter Mazzariol</div>
+                <div class="main-heading"><a href="/">Walter Mazzariol</a></div>
                     <hr class="center">
                 </div>
                 <div class="col-md-8">

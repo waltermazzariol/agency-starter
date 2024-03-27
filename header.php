@@ -26,9 +26,8 @@
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp_guarapo'); ?></a>
-		<header class="container site-header">
+		<header class="container gx-0 site-header">
 			<nav class="navbar navbar-expand-lg navbar-light py-0" id="mainNav">
-				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
      					 <span class="navbar-toggler-icon"></span>
@@ -56,7 +55,5 @@
 							<i class="fab fa-x-twitter" aria-label='icon'></i>
 						</a>
 					</div>
-
-				</div>
 			</nav>
 		</header><!-- #masthead -->
