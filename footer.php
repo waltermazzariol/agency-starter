@@ -21,7 +21,7 @@
 				<?php dynamic_sidebar('footer_area_two'); ?>
 			</div>
 			<div class="footer col-sm-12">
-				Copyright &copy; 2023 - <a href="https://guarapomedia.com" target="_blank" rel="noopener noreferrer"><img class="icon" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/guarapo_logo.svg"  alt="Guarapo Media" /></a>
+				Copyright &copy; 2024 - <a href="https://guarapomedia.com" target="_blank" rel="noopener noreferrer"><img class="icon" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/guarapo_logo.svg"  alt="Guarapo Media" /></a>
 			</div><!-- .site-info -->
 		</div>
 	</div>
