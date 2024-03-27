@@ -12,6 +12,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class($class = 'mb-3'); ?>>
     <header class="container card-loop">
             <div class="row justify-content-md-center ">
+                <div class="col-12">
+                    <div class="main-heading">Walter Mazzariol</div>
+                    <hr class="center">
+                </div>
                 <div class="col-md-8">
                     <h1 class="cover-title text-center"><?php the_title(); ?></h1>
                     <?php	if ( 'post' === get_post_type() ) :
@@ -27,7 +31,7 @@
                     <div class="mt-3">
                         <?php my_share_buttons(); ?>
                     </div>
-					<hr class="center">
+					
                 </div>
             </div>
     </header>

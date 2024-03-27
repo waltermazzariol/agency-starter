@@ -10,12 +10,15 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
-	<header class="container mt-5">
-		<div class="d-flex justify-content-center">
-				<h1 ><?php the_archive_title(); ?></h1>
-		</div>
-	</header>
+<main id="primary" class="container site-main">
+	
+	<div class="main-heading">Walter Mazzariol</div>
+	<header class="hero">
+	<img class="hero-img" src="<?php echo get_template_directory_uri() . '/dist/assets/images/hero.jpg'?>" alt="background"/>
+	<div class="hero-wrapper d-flex flex-column justify-content-end align-items-start" >
+		<h1 class="hero-title"><?php the_archive_title(); ?></h1>
+	</div>
+	</header><!-- .entry-header -->
 	<?php if ( have_posts() ) : ?>
 	<div class="container py-5">
 		<div class="row">
