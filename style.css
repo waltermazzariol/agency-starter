@@ -35,3 +35,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     font-weight: 700;
     text-transform: initial;
 }
+
+.category-1035 .box-loop{
+	aspect-ratio: 1 / 1;
+}

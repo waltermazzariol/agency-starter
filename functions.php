@@ -519,7 +519,7 @@ function guarapo_recent_posts_shortcode($atts, $content = null) {
 						'. $output . '
 				
 				<div class="d-flex justify-content-center">
-					<a class="btn-basic" href=' . get_category_link( $cat ) . '>Ver más</a>
+					<a class="button" href=' . get_category_link( $cat ) . '>Ver más</a>
 				</div>
 			</div>';
 	
