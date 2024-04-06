@@ -27,7 +27,7 @@ get_header();
 
 					?>
 			</div><!-- .page-content -->
-			<div class="d-flex justify-content-center"><a href="/" class="button">Go Home </a></div>
+			<div class="d-flex justify-content-center mb-5"><a href="/" class="button">Go Home </a></div>
 		</section><!-- .error-404 -->
 
 	</main><!-- #main -->
