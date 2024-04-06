@@ -1,8 +1,30 @@
-.site-footer{
-    background-color: #000000;
-    img{
-        max-width: 80px;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+.contact {
+    background-color: $primary;
+    .text, .title {
+      margin-bottom: 0.5rem;
+      margin-left: 1rem;
+      color: $white;
+      a {
+        color: #d7d7d7;
+      }
     }
-}
+    .social-contact {
+      a {
+        margin-bottom: 0.5rem;
+        margin-left: 1rem;
+        color: $white;
+        &:hover{
+          color: $light-gray;
+        }     
+      }
+    }    
+  }
+
+  .footer{
+    font-size: 0.8rem;
+    color: #7b7b7b; 
+    margin: auto;
+    .icon {
+      max-height: 20px;
+    }
+  }

@@ -23,7 +23,7 @@ const server = browserSync.create();
 
 export const serve = done => {
   server.init({
-    proxy: process.env.SERVERURI // put your local website link here
+    proxy: "http://demo-site.local" // put your local website link here
   });
   done();
 };

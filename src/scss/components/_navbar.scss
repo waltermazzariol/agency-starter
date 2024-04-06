@@ -15,8 +15,8 @@
       }
   
     &-logo {
-      width: auto;
-      height: 65px;
+      width: 90px;
+      height: 90px;
       image-rendering: auto;
       image-rendering: crisp-edges;
       image-rendering: pixelated;
@@ -29,7 +29,7 @@
     }
     &-subtitle{
       font-size: 0.9rem;
-      color: $gray;
+      color: $primary;
       padding-left: 0.5rem;
       align-self: end;
       margin-top: -10px;

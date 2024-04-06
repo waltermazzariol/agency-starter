@@ -15,7 +15,7 @@
 		<?php $feature_img = ((get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() :  catch_that_image())
 		?>
 		<div class="box-loop">
-			<a href="<?php get_permalink() ?>"><img class="box-loop-image" src="<?php echo $feature_img; ?>" alt="" /></a>
+			<a href="<?php echo get_permalink() ?>"><img class="box-loop-image" src="<?php echo $feature_img; ?>" alt="" /></a>
 		</div>
 		<header class="entry-header">
 			<?php

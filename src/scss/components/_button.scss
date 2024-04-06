@@ -1,36 +1,57 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
-.btn {
-  &-full {
-    width: 100%;
+// _buttons.scss
+
+// Define variables for button styles
+$button-padding: 0.5rem 1rem;
+$button-border-radius: 8px;
+$button-font-size:  0.9rem;
+$button-solid-bg: $primary;
+$button-solid-color: $text-color;
+$button-outline-border: 1px solid $primary;
+$button-outline-color: $primary;
+$button-font-fmaily: $headings-font-family;
+
+// Common styles for both buttons
+@mixin button-base() {
+  padding: $button-padding;
+  border-radius: $button-border-radius;
+  font-size: $button-font-size;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;  
+}
+
+// Solid button
+.button {
+  @include button-base();
+  background-color: $button-solid-bg;
+  color: $button-solid-color;
+  @media (min-width: 768px){
+      padding: 0.5rem 1.5rem;
+      font-size: 1.1rem;
+    }		
+  &:hover, &:active, &:focus {
+    background-color: darken($button-solid-bg, 10%);
+    color: $button-solid-color;
   }
-  &-basic{
-    padding: 0.8rem 3.5rem;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    border-radius: 25px;
-    margin: 1rem 0;
-    background-color: $gray-400;
-    color: $gray-100;
-    transition: 0.2s;
-    top:0;
-    position: relative;
-    a {
-      color: inherit;
-      i {
-        color: inherit;
-      }
-    }
-    &:hover {
-      cursor: pointer;
-      top: 2px;
-      transition: 0.2s;
-      background: $gray-300;
-      box-shadow: none;
-      a {
-        color: $gray-100;
-      }
-    }
+
+  &-big{
+    padding: 0.7rem 1.5rem;
+  }
+}
+
+// Outline button
+.button-outline {
+  @include button-base();
+  border: $button-outline-border;
+  color: $button-outline-color;
+  background-color: transparent;
+
+  &:hover, &:active, &:focus {
+    background-color: $button-outline-color;
+    color: $button-solid-color;
   }
 }
