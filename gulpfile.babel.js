@@ -14,8 +14,6 @@ import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import concat from 'gulp-concat';
-var env = require('gulp-env');
-env({file: ".env.json"});
 
 const sass = require('gulp-sass')(require('sass'));
 const PRODUCTION = yargs.argv.prod;

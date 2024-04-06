@@ -8,10 +8,10 @@ $button-padding: 0.5rem 1rem;
 $button-border-radius: 8px;
 $button-font-size:  0.9rem;
 $button-solid-bg: $primary;
-$button-solid-color: $text-color;
+$button-solid-color: $white;
 $button-outline-border: 1px solid $primary;
 $button-outline-color: $primary;
-$button-font-fmaily: $headings-font-family;
+$button-font-family: $headings-font-family;
 
 // Common styles for both buttons
 @mixin button-base() {
