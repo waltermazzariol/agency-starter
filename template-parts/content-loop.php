@@ -11,11 +11,17 @@
 
 <article class="col-md-4 mb-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="card-loop">
-		
-		<?php $feature_img = ((get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() :  catch_that_image())
-		?>
+
 		<div class="box-loop">
-			<a href="<?php echo get_permalink() ?>"><img class="box-loop-image" src="<?php echo $feature_img; ?>" alt="" /></a>
+			<a href="<?php echo get_permalink() ?>">
+				<?php
+				 if (has_post_thumbnail()) {
+					the_post_thumbnail('medium', array( 'class' => 'box-loop-image' ) );
+				}
+				else { ?>
+					<img class="box-loop-image" src="<?php echo catch_that_image(); ?>" alt="feature default" />
+				<?php } ?>
+			</a>
 		</div>
 		<header class="entry-header">
 			<?php

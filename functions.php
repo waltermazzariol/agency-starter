@@ -433,7 +433,7 @@ function catch_that_image() {
 	$first_img = (isset($matches[1][0]) ? $matches[1][0] :"");
   
 	if(empty($first_img)) {
-	  $first_img = get_template_directory_uri() . '/dist/assets/images/default_image.jpeg';
+	  $first_img = get_template_directory_uri() . '/dist/assets/images/default-image.webp';
 	}
 	return $first_img;
   }
