@@ -40,8 +40,8 @@
 						$image = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
 						$description = get_bloginfo('description');
 						?> 
-								<img class="navbar-brand-logo" height="90" width="90" alt="<?php bloginfo('name') ?>" src="<?php echo $image[0] ?>"/> 
-								<!-- <span class="navbar-brand-subtitle"><?php echo $description ?></span> -->
+								<img class="navbar-brand-logo" height="65" width="204" alt="<?php bloginfo('name') ?>" src="<?php echo $image[0] ?>"/> 
+								<span class="navbar-brand-subtitle"><?php echo $description ?></span>
 							
 						<?php
 						} else {

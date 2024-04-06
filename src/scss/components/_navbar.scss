@@ -15,8 +15,8 @@
       }
   
     &-logo {
-      width: 90px;
-      height: 90px;
+      width: auto;
+      height: 65px;
       image-rendering: auto;
       image-rendering: crisp-edges;
       image-rendering: pixelated;
@@ -29,7 +29,7 @@
     }
     &-subtitle{
       font-size: 0.9rem;
-      color: $primary;
+      color: $gray;
       padding-left: 0.5rem;
       align-self: end;
       margin-top: -10px;
@@ -56,7 +56,7 @@
     color: $navbar-text-color !important;
     margin-left: 1.2rem;
     &:hover {
-      color: $navbar-text-color-hover !important;
+      color: darken($navbar-text-color, 10%)!important;
       transition: 0.2s;
       text-decoration: none;
     }
