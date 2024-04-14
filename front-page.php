@@ -29,7 +29,7 @@ get_header();
 			<div class="row">
 				<div class="col-lg-5 col-md-12">
 					<div class="py-3 col-lg-12">
-						<h2>* it's about <br>me and how <br>i work</h2>
+						<h2>* about <br>me and how <br>i work</h2>
 					</div>
 				</div>
 				<div class="col-lg-7 col-md-12">

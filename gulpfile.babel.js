@@ -15,12 +15,10 @@ import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import concat from 'gulp-concat';
 
-var env = require('gulp-env');
-env({file: ".env.json"});
-
 const sass = require('gulp-sass')(require('sass'));
 const PRODUCTION = yargs.argv.prod;
 const server = browserSync.create();
+console.log(PRODUCTION);
 
 export const serve = done => {
   server.init({
@@ -34,19 +32,26 @@ export const reload = done => {
   done();
 };
 
-export const styles = () => {
+export const stylesDev = () => {
   return src('src/scss/bundle.scss')
-  .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+  .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
-  .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ])))
-  .pipe(gulpif(PRODUCTION, cleanCss({compatibility:'ie8'})))
-  .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
+  .pipe(sourcemaps.write())
+  .pipe(dest('dist/css'))
+  .pipe(browserSync.stream());
+}
+
+export const stylesProd = () => {
+  return src('src/scss/bundle.scss')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(postcss([ autoprefixer ]))
+  .pipe(cleanCss({compatibility:'ie8'}))
   .pipe(dest('dist/css'))
   .pipe(browserSync.stream());
 }
 
 export const watchForChanges = () => {
-  watch('src/scss/**/*.scss', series(styles, reload));
+  watch('src/scss/**/*.scss', series(stylesDev, reload));
   watch('src/assets/**/*.{jpg,jpeg,png,svg,gif}', series(images, reload));
   watch(['src/**/*','!src/{images,js,scss}','!src/{images,js,scss}/**/*'], series(copy, reload));
   watch('src/js/**/*.js', series(scripts, reload));
@@ -105,6 +110,6 @@ export const compress = () => {
     .pipe(dest(`languages/${info.name}.pot`));
   };
 
-export const dev = series(clean, parallel(styles, images, copy, scripts), serve, watchForChanges);
-export const build = series(clean, parallel(styles, images, copy, scripts), pot, compress);
+export const dev = series(clean, parallel(stylesDev, images, copy, scripts), serve, watchForChanges);
+export const build = series(clean, parallel(stylesProd, images, copy, scripts), pot, compress);
 export default dev;
